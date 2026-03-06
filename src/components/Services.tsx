@@ -1,17 +1,7 @@
 import { motion } from "framer-motion";
 import {
-  Globe,
-  Smartphone,
-  BarChart3,
-  Megaphone,
-  Users,
-  Wallet,
-  CreditCard,
-  Palette,
-  Share2,
-  BookOpen,
-  Briefcase,
-  HeadphonesIcon,
+  Globe, Smartphone, BarChart3, Megaphone, Users, Wallet,
+  CreditCard, Palette, Share2, BookOpen, Briefcase, HeadphonesIcon,
 } from "lucide-react";
 
 const services = [
@@ -39,14 +29,14 @@ const Services = () => {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-widest text-primary">
+          <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-[0.2em] text-primary">
             What We Offer
           </span>
-          <h2 className="font-heading text-4xl font-bold md:text-5xl">
+          <h2 className="font-heading text-4xl md:text-5xl">
             Everything Your Startup Needs
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            One team. One package. Every service you need to go from idea to a thriving business.
+            One crew. One package. Every service you need to go from idea to a thriving business.
           </p>
         </motion.div>
 
@@ -57,13 +47,13 @@ const Services = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className="group rounded-xl border border-border bg-gradient-card p-6 transition-all hover:border-primary/30 hover:shadow-glow"
+              transition={{ delay: i * 0.04 }}
+              className="group rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/30 hover:shadow-warm"
             >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-glow">
-                <service.icon size={24} className="text-primary" />
+              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10">
+                <service.icon size={22} className="text-primary" />
               </div>
-              <h3 className="mb-2 font-heading text-lg font-semibold text-foreground">
+              <h3 className="mb-2 font-heading text-lg text-foreground">
                 {service.title}
               </h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
