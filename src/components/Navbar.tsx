@@ -4,7 +4,6 @@ import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
   const links = ["Services", "Team", "Process", "Contact"];
 
   return (
@@ -15,40 +14,33 @@ const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl"
     >
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
-        <a href="#" className="font-heading text-2xl font-bold tracking-tight">
-          <span className="text-gradient">Build</span>
-          <span className="text-foreground">Stack</span>
+        <a href="#" className="font-heading text-2xl tracking-tight text-foreground">
+          Launch<span className="text-primary">Crew</span>
         </a>
 
-        {/* Desktop */}
         <div className="hidden items-center gap-8 md:flex">
           {links.map((link) => (
             <a
               key={link}
               href={`#${link.toLowerCase()}`}
-              className="text-sm text-muted-foreground transition-colors hover:text-primary"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               {link}
             </a>
           ))}
           <a
             href="#contact"
-            className="rounded-lg bg-gradient-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-shadow hover:shadow-glow"
+            className="rounded-full bg-gradient-warm px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-shadow hover:shadow-warm"
           >
             Get Started
           </a>
         </div>
 
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="text-foreground md:hidden"
-        >
+        <button onClick={() => setIsOpen(!isOpen)} className="text-foreground md:hidden">
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile menu */}
       {isOpen && (
         <motion.div
           initial={{ opacity: 0, height: 0 }}
@@ -61,14 +53,14 @@ const Navbar = () => {
                 key={link}
                 href={`#${link.toLowerCase()}`}
                 onClick={() => setIsOpen(false)}
-                className="text-muted-foreground transition-colors hover:text-primary"
+                className="text-muted-foreground hover:text-foreground"
               >
                 {link}
               </a>
             ))}
             <a
               href="#contact"
-              className="mt-2 rounded-lg bg-gradient-primary px-5 py-2.5 text-center text-sm font-semibold text-primary-foreground"
+              className="mt-2 rounded-full bg-gradient-warm px-5 py-2.5 text-center text-sm font-semibold text-primary-foreground"
             >
               Get Started
             </a>

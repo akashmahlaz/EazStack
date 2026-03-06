@@ -27,10 +27,10 @@ const Team = () => {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-widest text-primary">
-            Meet The Team
+          <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+            Meet The Crew
           </span>
-          <h2 className="font-heading text-4xl font-bold md:text-5xl">
+          <h2 className="font-heading text-4xl md:text-5xl">
             The People Behind Your Success
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
@@ -46,7 +46,7 @@ const Team = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="group overflow-hidden rounded-xl border border-border bg-gradient-card transition-all hover:border-primary/30"
+              className="group overflow-hidden rounded-xl border border-border bg-card transition-all hover:shadow-soft"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
@@ -55,12 +55,9 @@ const Team = () => {
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-card/90 via-transparent to-transparent" />
               </div>
-              <div className="relative p-6">
-                <h3 className="font-heading text-xl font-semibold text-foreground">
-                  {member.name}
-                </h3>
+              <div className="p-6">
+                <h3 className="font-heading text-xl text-foreground">{member.name}</h3>
                 <p className="mt-1 text-sm font-medium text-primary">{member.role}</p>
                 <p className="mt-3 text-sm text-muted-foreground">{member.desc}</p>
                 <div className="mt-4 flex gap-3">
