@@ -22,7 +22,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mb-6 font-heading text-5xl leading-[1.1] md:text-7xl"
           >
-            We Build Startups{" "}
+            Punjab Tech Builds Startups{" "}
             <em className="text-primary">From Scratch</em>
           </motion.h1>
 
