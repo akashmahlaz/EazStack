@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import teamGroup from "@/assets/team-group.jpg";
+import heroImage from "@/assets/image.png";
 
 const Hero = () => {
   return (
@@ -67,8 +67,8 @@ const Hero = () => {
         >
           <div className="overflow-hidden rounded-2xl shadow-soft">
             <img
-              src="src/assets/image.png"
-              alt="The Astren team"
+              src={heroImage}
+              alt="The Punjab Tech team"
               className="h-full w-full object-cover"
             />
           </div>

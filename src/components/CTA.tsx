@@ -13,13 +13,13 @@ const CTA = () => {
         >
           <div className="relative">
             <h2 className="mb-4 font-heading text-4xl md:text-5xl">
-              Ready to <em className="text-primary">Launch?</em>
+              Ready to <em className="text-primary">Build Your App?</em>
             </h2>
             <p className="mx-auto mb-8 max-w-xl text-lg text-muted-foreground">
               Book a free discovery call and let's map out everything you need to launch successfully.
             </p>
             <a
-              href="mailto:hello@launchcrew.co"
+              href="mailto:akashdalla406@gmail.com?subject=App%20Development%20Inquiry"
               className="group inline-flex items-center gap-2 rounded-full bg-gradient-warm px-8 py-4 font-body text-base font-semibold text-primary-foreground transition-shadow hover:shadow-warm"
             >
               Book a Free Call

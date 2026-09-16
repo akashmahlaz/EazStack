@@ -14,8 +14,8 @@ const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl"
     >
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
-        <a href="#" className="font-heading text-2xl tracking-tight text-foreground">
-          Launch<span className="text-primary">Crew</span>
+        <a href="/" className="font-heading text-2xl tracking-tight text-foreground">
+          Punjab<span className="text-primary">Tech</span>
         </a>
 
         <div className="hidden items-center gap-8 md:flex">
@@ -28,6 +28,12 @@ const Navbar = () => {
               {link}
             </a>
           ))}
+          <a
+            href="/app-development"
+            className="text-sm font-semibold text-primary transition-colors hover:text-foreground"
+          >
+            App Development
+          </a>
           <a
             href="#contact"
             className="rounded-full bg-gradient-warm px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-shadow hover:shadow-warm"
@@ -59,7 +65,15 @@ const Navbar = () => {
               </a>
             ))}
             <a
+              href="/app-development"
+              onClick={() => setIsOpen(false)}
+              className="text-sm font-semibold text-primary hover:text-foreground"
+            >
+              App Development
+            </a>
+            <a
               href="#contact"
+              onClick={() => setIsOpen(false)}
               className="mt-2 rounded-full bg-gradient-warm px-5 py-2.5 text-center text-sm font-semibold text-primary-foreground"
             >
               Get Started

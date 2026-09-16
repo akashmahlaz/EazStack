@@ -3,16 +3,20 @@ const Footer = () => {
     <footer className="border-t border-border py-12">
       <div className="container mx-auto flex flex-col items-center justify-between gap-6 px-6 md:flex-row">
         <div className="font-heading text-xl text-foreground">
-          Launch<span className="text-primary">Crew</span>
+          Punjab<span className="text-primary">Tech</span>
         </div>
-        <div className="flex gap-8 text-sm text-muted-foreground">
-          <a href="#services" className="transition-colors hover:text-foreground">Services</a>
-          <a href="#team" className="transition-colors hover:text-foreground">Team</a>
-          <a href="#process" className="transition-colors hover:text-foreground">Process</a>
-          <a href="#contact" className="transition-colors hover:text-foreground">Contact</a>
+        <div className="flex flex-wrap items-center gap-8 text-sm">
+          <a href="/app-development" className="text-muted-foreground transition-colors hover:text-foreground">App Development</a>
+          <a href="#services" className="text-muted-foreground transition-colors hover:text-foreground">Services</a>
+          <a href="#team" className="text-muted-foreground transition-colors hover:text-foreground">Team</a>
+          <a href="#contact" className="text-muted-foreground transition-colors hover:text-foreground">Contact</a>
+        </div>
+        <div className="flex items-center gap-4 text-sm text-muted-foreground">
+          <a href="mailto:akashdalla406@gmail.com" className="hover:text-foreground">akashdalla406@gmail.com</a>
+          <a href="https://wa.me/917814002784" className="hover:text-foreground">+91 78140 02784</a>
         </div>
         <p className="text-sm text-muted-foreground">
-          © 2026 LaunchCrew. All rights reserved.
+          © 2026 Punjab Tech. All rights reserved.
         </p>
       </div>
     </footer>
