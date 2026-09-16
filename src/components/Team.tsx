@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Linkedin, Twitter } from "lucide-react";
 
-import teamCeo from "@/assets/team-ceo.jpg";
+import teamCeo from "@/assets/team-ceo.png";
 import teamDesigner from "@/assets/team-designer.jpg";
 import teamDev from "@/assets/team-dev.jpg";
 import teamMarketing from "@/assets/team-marketing.jpg";
@@ -9,7 +9,7 @@ import teamConsultant from "@/assets/team-consultant.jpg";
 import teamGrowth from "@/assets/team-growth.jpg";
 
 const members = [
-  { name: "Arjun Mehta", role: "Founder & CEO", img: teamCeo, desc: "Visionary leader with 10+ years in startup ecosystems." },
+  { name: "Akash Mehla", role: "Founder & CEO", img: teamCeo, desc: "Visionary leader with 10+ years in startup ecosystems." },
   { name: "Maya Chen", role: "Lead Designer", img: teamDesigner, desc: "Crafts pixel-perfect brands and digital experiences." },
   { name: "Ravi Patel", role: "Head of Engineering", img: teamDev, desc: "Full-stack architect building scalable products." },
   { name: "Sarah Kim", role: "Marketing Director", img: teamMarketing, desc: "Growth strategist who scales brands from zero." },

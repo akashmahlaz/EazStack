@@ -67,8 +67,8 @@ const Hero = () => {
         >
           <div className="overflow-hidden rounded-2xl shadow-soft">
             <img
-              src={teamGroup}
-              alt="The LaunchCrew team"
+              src="src/assets/image.png"
+              alt="The Astren team"
               className="h-full w-full object-cover"
             />
           </div>
