@@ -4,7 +4,12 @@ import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const links = ["Services", "Team", "Process", "Contact"];
+  const links = [
+    { label: "Services", href: "/services" },
+    { label: "Team", href: "/team" },
+    { label: "Process", href: "/process" },
+    { label: "Contact", href: "/contact" },
+  ];
 
   return (
     <motion.nav
@@ -21,11 +26,11 @@ const Navbar = () => {
         <div className="hidden items-center gap-8 md:flex">
           {links.map((link) => (
             <a
-              key={link}
-              href={`#${link.toLowerCase()}`}
+              key={link.label}
+              href={link.href}
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
-              {link}
+              {link.label}
             </a>
           ))}
           <a
@@ -35,7 +40,7 @@ const Navbar = () => {
             App Development
           </a>
           <a
-            href="#contact"
+            href="/contact"
             className="rounded-full bg-gradient-warm px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-shadow hover:shadow-warm"
           >
             Get Started
@@ -56,12 +61,12 @@ const Navbar = () => {
           <div className="flex flex-col gap-4 px-6 py-6">
             {links.map((link) => (
               <a
-                key={link}
-                href={`#${link.toLowerCase()}`}
+                key={link.label}
+                href={link.href}
                 onClick={() => setIsOpen(false)}
                 className="text-muted-foreground hover:text-foreground"
               >
-                {link}
+                {link.label}
               </a>
             ))}
             <a
@@ -72,7 +77,7 @@ const Navbar = () => {
               App Development
             </a>
             <a
-              href="#contact"
+              href="/contact"
               onClick={() => setIsOpen(false)}
               className="mt-2 rounded-full bg-gradient-warm px-5 py-2.5 text-center text-sm font-semibold text-primary-foreground"
             >

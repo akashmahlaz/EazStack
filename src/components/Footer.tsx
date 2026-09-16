@@ -6,10 +6,10 @@ const Footer = () => {
           Punjab<span className="text-primary">Tech</span>
         </div>
         <div className="flex flex-wrap items-center gap-8 text-sm">
-          <a href="/app-development" className="text-muted-foreground transition-colors hover:text-foreground">App Development</a>
-          <a href="#services" className="text-muted-foreground transition-colors hover:text-foreground">Services</a>
-          <a href="#team" className="text-muted-foreground transition-colors hover:text-foreground">Team</a>
-          <a href="#contact" className="text-muted-foreground transition-colors hover:text-foreground">Contact</a>
+          <a href="/services" className="text-muted-foreground transition-colors hover:text-foreground">Services</a>
+          <a href="/team" className="text-muted-foreground transition-colors hover:text-foreground">Team</a>
+          <a href="/process" className="text-muted-foreground transition-colors hover:text-foreground">Process</a>
+          <a href="/contact" className="text-muted-foreground transition-colors hover:text-foreground">Contact</a>
         </div>
         <div className="flex items-center gap-4 text-sm text-muted-foreground">
           <a href="mailto:akashdalla406@gmail.com" className="hover:text-foreground">akashdalla406@gmail.com</a>
