@@ -13,7 +13,7 @@ const CTA = () => {
         >
           <div className="relative">
             <h2 className="mb-4 font-heading text-4xl md:text-5xl">
-              Ready to <em className="text-primary">Build Your Mobile App?</em>
+              Ready to <em className="text-primary">Build Your Startup?</em>
             </h2>
             <p className="mx-auto mb-2 max-w-xl text-lg text-muted-foreground">
               Book a free, no-strings call. We'll map out your app, tech stack, timeline, and budget.
@@ -32,10 +32,10 @@ const CTA = () => {
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
               </a>
               <a
-                href="/app-development"
+                href="/contact"
                 className="rounded-full border border-foreground/20 px-8 py-4 font-body text-base font-medium text-foreground transition-colors hover:border-foreground/40"
               >
-                App Development
+                Start a Project
               </a>
             </div>
           </div>

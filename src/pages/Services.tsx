@@ -1,107 +1,107 @@
 import { motion } from "framer-motion";
-import { 
-  Smartphone, Briefcase, HeadphonesIcon, Globe, BarChart3, 
-  Megaphone, Share2, Palette, Wallet, CreditCard, BookOpen, 
-  Users, Code2, Cloud, Shield, TrendingUp, Rocket 
+import {
+  Smartphone, Scale, HeadphonesIcon, Globe, BarChart3,
+  Megaphone, Share2, Palette, Wallet, CreditCard, BookOpen,
+  Users, Code2, Cloud, Shield, TrendingUp, Rocket
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Seo from "@/components/Seo";
 
 const services = [
-  { 
-    icon: Smartphone, 
-    title: "Mobile App Development", 
+  {
+    icon: Smartphone,
+    title: "Mobile App Development",
     desc: "iOS & Android apps built with React Native & Expo — from MVP to App Store & Play Store publishing.",
-    features: ["React Native & Expo", "iOS & Android", "App Store Publishing", "Push Notifications", "Offline Support"]
+    features: ["React Native & Expo", "Flutter", "iOS & Android", "App Store Publishing", "Push Notifications", "Offline Support"]
   },
-  { 
-    icon: Briefcase, 
-    title: "MVP in 4 Weeks", 
-    desc: "Ship a lean, production-ready app to the stores fast — validate your idea in 4 weeks.",
-    features: ["Week 1: Discovery & Scope", "Week 2: Core Build", "Week 3: Backend & Stores", "Week 4: Ship & Fix"]
+  {
+    icon: Scale,
+    title: "Legal & Compliance",
+    desc: "Company registration, contracts, and regulatory guidance.",
+    features: ["Company Registration", "Contract Management", "Regulatory Compliance"]
   },
-  { 
-    icon: Globe, 
-    title: "Websites & Web Apps", 
+  {
+    icon: Globe,
+    title: "Websites & Web Apps",
     desc: "High-conversion websites, dashboards, and SaaS apps built with Next.js.",
     features: ["Next.js Development", "E-commerce Sites", "Admin Dashboards", "SaaS Platforms", "Landing Pages"]
   },
-  { 
-    icon: Code2, 
-    title: "Custom Software", 
+  {
+    icon: Code2,
+    title: "Custom Software",
     desc: "Tailor-made software solutions for unique business requirements.",
     features: ["Enterprise Software", "API Development", "System Integration", "Legacy Modernization", "Database Design"]
   },
-  { 
-    icon: BarChart3, 
-    title: "CRM Integration", 
+  {
+    icon: BarChart3,
+    title: "CRM Integration",
     desc: "Seamless CRM setup to manage leads, sales, and customer relationships.",
     features: ["Salesforce Setup", "HubSpot Integration", "Custom Pipelines", "Automation", "Analytics"]
   },
-  { 
-    icon: Megaphone, 
-    title: "Digital Marketing", 
+  {
+    icon: Megaphone,
+    title: "Digital Marketing",
     desc: "SEO, PPC, and content strategies that drive real growth.",
     features: ["SEO Optimization", "Google Ads", "Content Strategy", "Email Marketing", "Analytics & Reporting"]
   },
-  { 
-    icon: Share2, 
-    title: "Social Media Growth", 
+  {
+    icon: Share2,
+    title: "Social Media Growth",
     desc: "Build your brand presence across all major platforms.",
     features: ["Instagram & Facebook", "LinkedIn Marketing", "Content Creation", "Community Management", "Influencer Partnerships"]
   },
-  { 
-    icon: Palette, 
-    title: "Branding & Design", 
+  {
+    icon: Palette,
+    title: "Branding & Design",
     desc: "Logos, business cards, banners, and complete brand identity.",
     features: ["Logo Design", "Brand Guidelines", "UI/UX Design", "Marketing Collateral", "Brand Strategy"]
   },
-  { 
-    icon: TrendingUp, 
-    title: "Growth Strategy", 
+  {
+    icon: TrendingUp,
+    title: "Growth Strategy",
     desc: "Data-driven strategies to scale your business.",
     features: ["Market Analysis", "Growth Hacking", "User Acquisition", "Retention Strategies", "Competitor Research"]
   },
-  { 
-    icon: Wallet, 
-    title: "Funding Guidance", 
+  {
+    icon: Wallet,
+    title: "Funding Guidance",
     desc: "Navigate investors, grants, and fundraising strategies.",
     features: ["Pitch Deck Creation", "Investor Connections", "Grant Applications", "Financial Modeling", "Valuation"]
   },
-  { 
-    icon: CreditCard, 
-    title: "Payment Integration", 
+  {
+    icon: CreditCard,
+    title: "Payment Integration",
     desc: "Secure payment gateways and billing systems for your app/web.",
     features: ["Stripe Integration", "Razorpay", "Subscription Billing", "Payment Security", "Multiple Currencies"]
   },
-  { 
-    icon: Cloud, 
-    title: "Cloud Solutions", 
+  {
+    icon: Cloud,
+    title: "Cloud Solutions",
     desc: "Scalable cloud infrastructure and deployment.",
     features: ["AWS Setup", "Google Cloud", "Azure", "CI/CD Pipelines", "DevOps"]
   },
-  { 
-    icon: Shield, 
-    title: "Security & Compliance", 
+  {
+    icon: Shield,
+    title: "Security & Compliance",
     desc: "Protect your app and ensure regulatory compliance.",
     features: ["Security Audits", "GDPR Compliance", "Data Encryption", "Penetration Testing", "OAuth & Auth"]
   },
-  { 
-    icon: BookOpen, 
-    title: "Business Strategy", 
+  {
+    icon: BookOpen,
+    title: "Business Strategy",
     desc: "Market research, business plans, and competitive analysis.",
     features: ["Market Research", "Business Plans", "Competitive Analysis", "Go-to-Market Strategy", "ROI Projections"]
   },
-  { 
-    icon: Users, 
-    title: "Hiring Support", 
+  {
+    icon: Users,
+    title: "Hiring Support",
     desc: "Find and recruit the right talent for your growing team.",
     features: ["Tech Recruiting", "Technical Interviews", "Contract-to-Hire", "Team Augmentation", "Remote Hiring"]
   },
-  { 
-    icon: HeadphonesIcon, 
-    title: "Ongoing Support", 
+  {
+    icon: HeadphonesIcon,
+    title: "Ongoing Support",
     desc: "Maintenance, updates, and crash fixes after launch.",
     features: ["24/7 Monitoring", "Bug Fixes", "Regular Updates", "Performance Optimization", "On-call Support"]
   },
@@ -112,12 +112,12 @@ const ServicesPage = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <Seo title="Punjab Tech | Services - Everything Your Startup Needs" description="Mobile app development, web development, digital marketing, branding, and more. Full-service startup launch platform." />
-      
+
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
         <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
-        
+
         <div className="container mx-auto px-6 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -132,7 +132,7 @@ const ServicesPage = () => {
               Everything Your Startup Needs
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Mobile apps first. One crew, one package — from idea to a thriving business. 
+              Mobile apps first. One crew, one package — from idea to a thriving business.
               We handle the tech so you can focus on growth.
             </p>
           </motion.div>
