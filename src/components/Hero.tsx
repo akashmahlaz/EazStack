@@ -22,7 +22,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mb-6 font-heading text-5xl leading-[1.1] md:text-7xl"
           >
-            Punjab Tech Builds Startups{" "}
+            We Build Startups{" "}
             <em className="text-primary">From Scratch</em>
           </motion.h1>
 
@@ -42,10 +42,10 @@ const Hero = () => {
             className="mb-8 flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
             <a
-              href="/app-development"
+              href="/contact"
               className="group flex items-center gap-2 rounded-full bg-gradient-warm px-8 py-4 font-body text-base font-semibold text-primary-foreground transition-shadow hover:shadow-warm"
             >
-              Build Your App
+              Start Your Journey
               <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
             </a>
             <a
