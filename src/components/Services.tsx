@@ -5,18 +5,19 @@ import {
 } from "lucide-react";
 
 const services = [
-  { icon: Globe, title: "Website Development", desc: "Custom, high-performance websites that convert visitors into customers." },
-  { icon: Smartphone, title: "App Development", desc: "Native & cross-platform mobile apps tailored to your business." },
+  { icon: Smartphone, title: "Mobile App Development", desc: "iOS & Android apps built with React Native & Expo — from MVP to App Store & Play Store publishing." },
+  { icon: Briefcase, title: "MVP in 4 Weeks", desc: "Ship a lean, production-ready app to the stores fast — validate your idea in 4 weeks." },
+  { icon: HeadphonesIcon, title: "App Store Publishing", desc: "Listing, screenshots, metadata, and review fixes for the App Store & Google Play." },
+  { icon: Globe, title: "Websites & Web Apps", desc: "High-conversion websites, dashboards, and SaaS apps built with Next.js." },
   { icon: BarChart3, title: "CRM Integration", desc: "Seamless CRM setup to manage leads, sales, and customer relationships." },
   { icon: Megaphone, title: "Digital Marketing", desc: "SEO, PPC, and content strategies that drive real growth." },
   { icon: Share2, title: "Social Media Growth", desc: "Build your brand presence across all major platforms." },
   { icon: Palette, title: "Branding & Design", desc: "Logos, business cards, banners, and complete brand identity." },
-  { icon: Users, title: "Hiring Support", desc: "Find and recruit the right talent for your growing team." },
   { icon: Wallet, title: "Funding Guidance", desc: "Navigate investors, grants, and fundraising strategies." },
-  { icon: CreditCard, title: "Payment Integration", desc: "Set up secure payment gateways and billing systems." },
+  { icon: CreditCard, title: "Payment Integration", desc: "Secure payment gateways and billing systems for your app/web." },
   { icon: BookOpen, title: "Business Strategy", desc: "Market research, business plans, and competitive analysis." },
-  { icon: Briefcase, title: "Legal & Compliance", desc: "Company registration, contracts, and regulatory guidance." },
-  { icon: HeadphonesIcon, title: "Ongoing Support", desc: "24/7 support and maintenance after launch." },
+  { icon: Users, title: "Hiring Support", desc: "Find and recruit the right talent for your growing team." },
+  { icon: HeadphonesIcon, title: "Ongoing Support", desc: "Maintenance, updates, and crash fixes after launch." },
 ];
 
 const Services = () => {
@@ -36,7 +37,7 @@ const Services = () => {
             Everything Your Startup Needs
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            One crew. One package. Every service you need to go from idea to a thriving business.
+            Mobile apps first. One crew, one package — from idea to a thriving business.
           </p>
         </motion.div>
 

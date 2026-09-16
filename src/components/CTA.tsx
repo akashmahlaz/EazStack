@@ -13,18 +13,31 @@ const CTA = () => {
         >
           <div className="relative">
             <h2 className="mb-4 font-heading text-4xl md:text-5xl">
-              Ready to <em className="text-primary">Build Your App?</em>
+              Ready to <em className="text-primary">Build Your Mobile App?</em>
             </h2>
-            <p className="mx-auto mb-8 max-w-xl text-lg text-muted-foreground">
-              Book a free discovery call and let's map out everything you need to launch successfully.
+            <p className="mx-auto mb-2 max-w-xl text-lg text-muted-foreground">
+              Book a free, no-strings call. We'll map out your app, tech stack, timeline, and budget.
             </p>
-            <a
-              href="mailto:akashdalla406@gmail.com?subject=App%20Development%20Inquiry"
-              className="group inline-flex items-center gap-2 rounded-full bg-gradient-warm px-8 py-4 font-body text-base font-semibold text-primary-foreground transition-shadow hover:shadow-warm"
-            >
-              Book a Free Call
-              <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-            </a>
+            <p className="mb-8 text-sm text-muted-foreground">
+              WhatsApp • +91 78140 02784 • akashdalla406@gmail.com
+            </p>
+            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <a
+                href="https://wa.me/917814002784?text=Hi%20Akash%2C%20I%27d%20like%20to%20chat%20about%20a%20project"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2 rounded-full bg-gradient-warm px-8 py-4 font-body text-base font-semibold text-primary-foreground transition-shadow hover:shadow-warm"
+              >
+                Chat on WhatsApp
+                <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+              </a>
+              <a
+                href="/app-development"
+                className="rounded-full border border-foreground/20 px-8 py-4 font-body text-base font-medium text-foreground transition-colors hover:border-foreground/40"
+              >
+                App Development
+              </a>
+            </div>
           </div>
         </motion.div>
       </div>

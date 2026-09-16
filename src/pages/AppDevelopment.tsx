@@ -41,6 +41,7 @@ const AppDevelopment = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <Seo title="Punjab Tech | Mobile App Development (React Native) - Akashdeep Singh" description="Punjab Tech builds mobile apps with React Native for iOS and Android. MVPs, Play Store apps, and full startup launch. Based in Punjab. Book a free call." />
       <section className="py-24 pt-20 text-center">
         <div className="container mx-auto px-6">
           <motion.p
