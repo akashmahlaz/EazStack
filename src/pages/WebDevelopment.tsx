@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, Star, Globe, Code2, Palette, ShoppingCart, BarChart3, Shield, Zap, Search, MessageCircle, TrendingUp, Users, Smartphone } from "lucide-react";
+import { ArrowRight, CheckCircle2, Star, Globe, Code2, Palette, ShoppingCart, BarChart3, Shield, Zap, Search, MessageCircle, TrendingUp, Users, Smartphone, ExternalLink, Layout, Database, Lock, Rocket } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 
 const stats = [
   { value: "100+", label: "Web Projects Delivered" },
@@ -16,7 +17,7 @@ const benefits = [
   { icon: Smartphone, title: "Fully Responsive Design", desc: "Perfect experience on desktop, tablet, and mobile. Your site looks great on every device." },
   { icon: Shield, title: "Enterprise Security", desc: "SSL certificates, security headers, and best practices built in. Your data and users stay protected." },
   { icon: TrendingUp, title: "Conversion-Focused", desc: "Strategic CTA placement, optimized forms, and UX patterns that turn visitors into customers." },
-  { icon: BarChart3, title: "Analytics Integration", desc: "完整的事件追踪和转化分析。您可以清楚地看到用户行为并优化转化。" },
+  { icon: BarChart3, title: "Analytics Integration", desc: "Complete event tracking and conversion analytics. Clear visibility into user behavior and conversion optimization." },
 ];
 
 const services = [
@@ -71,13 +72,40 @@ const techStack = [
 ];
 
 const faqs = [
-  { question: "How much does a website cost?", answer: "Landing pages start at ₹25,000. E-commerce stores range from ₹75,000 - ₹2,50,000. Custom web applications start at ₹3,00,000+. We provide detailed quotes after understanding your requirements." },
+  { question: "How much does a website cost?", answer: "Our web development packages start at $299 for landing pages. E-commerce stores start at $799, and custom web applications start at $1,999. We provide detailed quotes after understanding your requirements." },
   { question: "How long does it take to build a website?", answer: "Landing pages: 3-5 days. Business websites: 1-2 weeks. E-commerce stores: 3-6 weeks. SaaS applications: 8-16 weeks. Timelines vary based on complexity and scope." },
   { question: "Do I own the website?", answer: "Yes, you get 100% ownership of all code, designs, and assets. We provide full source code with documentation." },
   { question: "Will my website rank on Google?", answer: "We build SEO best practices into every site - fast loading, proper headings, semantic HTML, meta tags, and sitemaps. For competitive keywords, we recommend ongoing SEO services." },
   { question: "Can you help with domain and hosting?", answer: "Yes, we can handle everything - domain registration, DNS configuration, and managed hosting on Vercel or AWS. We make it completely hassle-free." },
 ];
 
+// Web Development Pricing in USD
+const webPricingTiers = [
+  {
+    name: "Landing Page",
+    price: "$299",
+    originalPrice: "$599",
+    desc: "Single high-converting page",
+    features: ["1-5 sections", "Contact forms", "Mobile responsive", "Basic SEO", "Fast loading", "Custom design", "3-5 day delivery"]
+  },
+  {
+    name: "Business Website",
+    price: "$599",
+    originalPrice: "$1,199",
+    desc: "Professional corporate site",
+    features: ["Up to 10 pages", "Blog integration", "Contact forms", "Advanced SEO", "Analytics setup", "CMS integration", "1-2 week delivery"],
+    popular: true
+  },
+  {
+    name: "E-commerce Store",
+    price: "$1,299",
+    originalPrice: "$2,599",
+    desc: "Full online store",
+    features: ["Unlimited products", "Payment gateway", "Inventory management", "Order tracking", "Mobile app view", "Admin dashboard", "3-6 week delivery"]
+  }
+];
+
+const WebDevelopment = () => {
 const testimonials = [
   { name: "Tech Startup", role: "SaaS Dashboard", desc: "Built our entire product dashboard. Excellent code quality and communication.", rating: 5 },
   { name: "Restaurant Chain", role: "Online Ordering", desc: "E-commerce site increased orders by 40% in first month. Highly recommended.", rating: 5 },
@@ -87,15 +115,11 @@ const testimonials = [
 const WebDevelopment = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Seo 
+        title="Punjab Tech | Expert Web Development - Next.js, React, Custom Websites"
+        description="Hire expert web developers. Next.js websites, e-commerce stores, and web apps built for speed, SEO, and conversion. Starting at $499. Free consultation."
+      />
       <Navbar />
-      
-      {/* SEO */}
-      <title>Punjab Tech | Web Development Company - Next.js, React, Website Design</title>
-      <meta name="description" content="Hire expert web developers in Punjab. Next.js websites, e-commerce stores, and web apps. Fast, SEO-optimized, and scalable. Free quote available." />
-      <meta name="keywords" content="web development company, Next.js development, React web developer, website development, e-commerce development, custom web app development, website design company, hire web developer, web development Punjab, website development India" />
-      <meta property="og:title" content="Punjab Tech | Expert Web Development - Next.js & React" />
-      <meta property="og:description" content="Build fast, SEO-optimized websites with Punjab's top developers. Next.js, React, TypeScript. Get free consultation." />
-      <meta property="og:type" content="website" />
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-primary/5 via-background to-background pt-32 pb-20">
@@ -374,58 +398,36 @@ const WebDevelopment = () => {
           >
             <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Pricing</span>
             <h2 className="font-heading text-4xl md:text-5xl mt-4">Transparent Pricing</h2>
+            <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">Startup-friendly pricing to get your business online fast.</p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {webPricingTiers.map((tier, i) => (
             <motion.div
+              key={tier.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="rounded-2xl border border-border bg-card p-8"
+              transition={{ delay: i * 0.1 }}
+              className={`rounded-2xl border p-8 relative ${tier.popular ? 'border-primary bg-card shadow-lg shadow-primary/10' : 'border-border bg-card'}`}
             >
-              <h3 className="font-heading text-xl mb-2">Landing Page</h3>
-              <p className="text-muted-foreground text-sm mb-4">Single high-converting page</p>
-              <div className="font-heading text-4xl mb-6">₹25K<span className="text-lg text-muted-foreground">+</span></div>
+              {tier.popular && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full">Most Popular</div>
+              )}
+              <h3 className="font-heading text-xl mb-2">{tier.name}</h3>
+              <p className="text-muted-foreground text-sm mb-4">{tier.desc}</p>
+              <div className="mb-6">
+                <span className="font-heading text-4xl">{tier.price}</span>
+                <span className="text-lg text-muted-foreground line-through ml-2">{tier.originalPrice}</span>
+              </div>
               <ul className="space-y-3 text-sm mb-8">
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> 1-5 sections</li>
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> Contact forms</li>
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> 5-7 days delivery</li>
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> SEO ready</li>
+                {tier.features.map((feature) => (
+                  <li key={feature} className="flex gap-2"><CheckCircle2 size={16} className="text-primary flex-shrink-0" /> {feature}</li>
+                ))}
               </ul>
-              <a href="/contact" className="block text-center rounded-full border border-border py-3 font-medium hover:bg-background transition-colors">Get Started</a>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="rounded-2xl border-2 border-primary bg-card p-8 relative"
-            >
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full">Popular</div>
-              <h3 className="font-heading text-xl mb-2">Business Website</h3>
-              <p className="text-muted-foreground text-sm mb-4">Professional corporate site</p>
-              <div className="font-heading text-4xl mb-6">₹50K<span className="text-lg text-muted-foreground">+</span></div>
-              <ul className="space-y-3 text-sm mb-8">
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> Up to 10 pages</li>
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> Blog integration</li>
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> Contact forms</li>
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> SEO optimized</li>
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> 1-2 weeks delivery</li>
-              </ul>
-              <a href="/contact" className="block text-center rounded-full bg-gradient-warm py-3 font-semibold text-primary-foreground hover:shadow-warm transition-all">Get Started</a>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="rounded-2xl border border-border bg-card p-8"
-            >
-              <h3 className="font-heading text-xl mb-2">E-commerce Store</h3>
-              <p className="text-muted-foreground text-sm mb-4">Full online store</p>
-              <div className="font-heading text-4xl mb-6">₹75K<span className="text-lg text-muted-foreground">+</span></div>
+              <a href="https://wa.me/917814002784?text=Interested%20in%20{tier.name}" className={`block text-center rounded-full py-3 font-semibold transition-all ${tier.popular ? 'bg-gradient-warm text-primary-foreground hover:shadow-warm' : 'border border-border hover:bg-background'}`}>Get Started</a>
+          </motion.div>
+          ))}
               <ul className="space-y-3 text-sm mb-8">
                 <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> Unlimited products</li>
                 <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> Payment integration</li>

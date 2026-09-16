@@ -11,8 +11,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Seo 
-        title="Punjab Tech | App & Web Development Studio — Akashdeep Singh"
-        description="Punjab Tech builds mobile apps (React Native) and websites for startups. MVPs, Play Store apps, branding, CRM & growth — one package. Built by Akashdeep Singh. Book a free call."
+        title="Punjab Tech | Startup Studio — Build Your Dream App, Website & Brand"
+        description="Punjab Tech is a premier startup studio in Punjab, India. We build mobile apps (React Native), websites (Next.js), and provide branding, digital marketing & growth solutions. From MVP to market leader — we help startups succeed. Book a free consultation."
       />
       <Navbar />
       <Hero />

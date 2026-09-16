@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, Star, Zap, Shield, Clock, Globe, Smartphone, Code2, Rocket, Users, TrendingUp, MessageCircle, Play, Monitor, BarChart3 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Star, Zap, Shield, Clock, Globe, Smartphone, Code2, Rocket, Users, TrendingUp, MessageCircle, Play, Monitor, BarChart3, Tablet, Download, RefreshCw, Headphones } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
+import { useState } from "react";
 
 const stats = [
   { value: "50+", label: "Apps Delivered" },
@@ -38,11 +40,11 @@ const techStack = [
 ];
 
 const faqs = [
-  { question: "How much does it cost to build a mobile app?", answer: "Mobile app development costs vary based on features and complexity. A basic MVP starts at ₹1,50,000, while feature-rich apps range from ₹3,00,000 - ₹10,00,000+. We provide detailed quotes after understanding your requirements." },
+  { question: "How much does it cost to build a mobile app?", answer: "Our MVP package starts at $499 - one of the most competitive rates in the market. Growth and Enterprise packages are available at $1,499 and $3,999 respectively. We offer flexible payment terms and startup discounts." },
   { question: "How long does it take to develop a mobile app?", answer: "MVP development takes 4-6 weeks. More complex apps with advanced features take 8-16 weeks. We follow agile methodology with 2-week sprints for predictable delivery." },
   { question: "Will I own the source code?", answer: "Yes, you get 100% ownership of all source code, designs, and intellectual property. We provide well-documented, clean code that any developer can work with." },
   { question: "Do you provide app store submission?", answer: "Yes, we handle complete Play Store and App Store submission including account setup, metadata, screenshots, app preview videos, and review handling. Your app goes live in both stores." },
-  { question: "What happens after my app is launched?", answer: "We provide 30 days of free post-launch support to handle any bugs or issues. After that, we offer optional maintenance packages starting at ₹5,000/month for ongoing updates and support." },
+  { question: "What happens after my app is launched?", answer: "We provide 30 days of free post-launch support to handle any bugs or issues. After that, we offer optional maintenance packages starting at $99/month for ongoing updates and support." },
 ];
 
 const testimonials = [
@@ -51,9 +53,73 @@ const testimonials = [
   { name: "HiringBull", role: "Job Portal App", desc: "From concept to launch in 6 weeks. Great communication throughout.", rating: 5 },
 ];
 
+// Pricing tiers with US Dollar for global positioning
+const pricingTiers = [
+  {
+    name: "MVP Launch",
+    price: "$499",
+    originalPrice: "$999",
+    desc: "Perfect for validating your startup idea",
+    features: [
+      "Core 5-7 features",
+      "iOS & Android apps",
+      "Basic UI/UX design",
+      "User authentication",
+      "Push notifications",
+      "Admin dashboard",
+      "4-week delivery",
+      "30-day support"
+    ],
+    popular: false,
+    cta: "Start MVP"
+  },
+  {
+    name: "Growth",
+    price: "$1,499",
+    originalPrice: "$2,999",
+    desc: "For startups ready to scale",
+    features: [
+      "10-15 advanced features",
+      "iOS & Android apps",
+      "Premium UI/UX design",
+      "Payment integration",
+      "Real-time features",
+      "Analytics dashboard",
+      "API integrations",
+      "6-week delivery",
+      "90-day support"
+    ],
+    popular: true,
+    cta: "Most Popular"
+  },
+  {
+    name: "Enterprise",
+    price: "$3,999",
+    originalPrice: "$7,999",
+    desc: "Full-featured app with all extras",
+    features: [
+      "Unlimited features",
+      "iOS & Android + Web",
+      "Custom UI/UX design",
+      "Advanced security",
+      "AI/ML integration",
+      "Custom admin panel",
+      "Third-party APIs",
+      "10-week delivery",
+      "1-year support"
+    ],
+    popular: false,
+    cta: "Go Enterprise"
+  }
+];
+
 const AppDevelopment = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Seo 
+        title="Mobile App Development Company | React Native Apps - Punjab Tech"
+        description="Expert mobile app development services. Build iOS & Android apps with React Native. MVP in 4 weeks, Play Store publishing included. Starting at $499. Free consultation."
+      />
       <Navbar />
 
       {/* SEO */}
@@ -386,69 +452,43 @@ const AppDevelopment = () => {
           >
             <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Pricing</span>
             <h2 className="font-heading text-4xl md:text-5xl mt-4">Simple, Transparent Pricing</h2>
+            <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+              Startup-friendly pricing designed to help you enter the market. All packages include full source code ownership.
+            </p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="rounded-2xl border border-border bg-card p-8"
-            >
-              <h3 className="font-heading text-xl mb-2">MVP Bundle</h3>
-              <p className="text-muted-foreground text-sm mb-4">For startups validating ideas</p>
-              <div className="font-heading text-4xl mb-6">₹1.5L<span className="text-lg text-muted-foreground">+</span></div>
-              <ul className="space-y-3 text-sm mb-8">
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> Core features (3-5)</li>
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> iOS & Android</li>
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> 4-6 week delivery</li>
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> Play Store submission</li>
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> 30-day support</li>
-              </ul>
-              <a href="/contact" className="block text-center rounded-full border border-border py-3 font-medium hover:bg-background transition-colors">Get Started</a>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="rounded-2xl border-2 border-primary bg-card p-8 relative"
-            >
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full">Most Popular</div>
-              <h3 className="font-heading text-xl mb-2">Growth Bundle</h3>
-              <p className="text-muted-foreground text-sm mb-4">For product-market fit</p>
-              <div className="font-heading text-4xl mb-6">₹3L<span className="text-lg text-muted-foreground">+</span></div>
-              <ul className="space-y-3 text-sm mb-8">
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> Advanced features (6-10)</li>
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> iOS & Android</li>
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> 8-12 week delivery</li>
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> Admin dashboard</li>
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> Payment integration</li>
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> Analytics setup</li>
-              </ul>
-              <a href="/contact" className="block text-center rounded-full bg-gradient-warm py-3 font-semibold text-primary-foreground hover:shadow-warm transition-all">Get Started</a>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="rounded-2xl border border-border bg-card p-8"
-            >
-              <h3 className="font-heading text-xl mb-2">Enterprise</h3>
-              <p className="text-muted-foreground text-sm mb-4">For scaling businesses</p>
-              <div className="font-heading text-4xl mb-6">₹5L<span className="text-lg text-muted-foreground">+</span></div>
-              <ul className="space-y-3 text-sm mb-8">
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> Full feature set</li>
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> Custom backend</li>
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> 12-16 week delivery</li>
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> App Store + Play Store</li>
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> Dedicated support</li>
-              </ul>
-              <a href="/contact" className="block text-center rounded-full border border-border py-3 font-medium hover:bg-background transition-colors">Contact Us</a>
-            </motion.div>
+            {pricingTiers.map((tier, i) => (
+              <motion.div
+                key={tier.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className={`rounded-2xl border p-8 relative ${tier.popular ? 'border-primary bg-card shadow-lg shadow-primary/10' : 'border-border bg-card'}`}
+              >
+                {tier.popular && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full">Most Popular</div>
+                )}
+                <h3 className="font-heading text-xl mb-2">{tier.name}</h3>
+                <p className="text-muted-foreground text-sm mb-4">{tier.desc}</p>
+                <div className="mb-6">
+                  <span className="font-heading text-4xl">{tier.price}</span>
+                  <span className="text-lg text-muted-foreground line-through ml-2">{tier.originalPrice}</span>
+                </div>
+                <ul className="space-y-3 text-sm mb-8">
+                  {tier.features.map((feature) => (
+                    <li key={feature} className="flex gap-2"><CheckCircle2 size={16} className="text-primary flex-shrink-0" /> {feature}</li>
+                  ))}
+                </ul>
+                <a 
+                  href="https://wa.me/917814002784?text=Hi%20Akash,%20interested%20in%20{tier.name}%20package" 
+                  className={`block text-center rounded-full py-3 font-semibold transition-all ${tier.popular ? 'bg-gradient-warm text-primary-foreground hover:shadow-warm' : 'border border-border hover:bg-background'}`}
+                >
+                  {tier.cta}
+                </a>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

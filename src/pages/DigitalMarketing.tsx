@@ -2,11 +2,12 @@ import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Star, Search, TrendingUp, DollarSign, Target, MessageCircle, BarChart3, Users, Globe, Mail } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 
 const stats = [
   { value: "300%", label: "Avg. ROI Increase" },
   { value: "50+", label: "Clients Grown" },
-  { value: "₹10Cr+", label: "Ad Spend Managed" },
+  { value: "$1M+", label: "Ad Spend Managed" },
   { value: "24/7", label: "Campaign Monitoring" },
 ];
 
@@ -52,7 +53,7 @@ const process = [
 
 const faqs = [
   { question: "How soon will I see results from digital marketing?", answer: "SEO takes 3-6 months for significant results. PPC ads can generate traffic immediately. Social media growth typically shows progress within 2-3 months. We provide monthly progress reports so you can track performance." },
-  { question: "How much should I spend on digital marketing?", answer: "Budget depends on your goals, industry, and competition. We recommend starting with ₹25,000-50,000/month for small businesses and scaling based on results. We'll help you allocate budget across channels for maximum ROI." },
+  { question: "How much should I spend on digital marketing?", answer: "Budget depends on your goals, industry, and competition. We recommend starting with $299-599/month for small businesses and scaling based on results. We'll help you allocate budget across channels for maximum ROI." },
   { question: "Do you offer packages or customize strategies?", answer: "We create custom strategies based on your specific business needs, goals, and budget. Every business is unique, and we tailor our approach accordingly. We do offer standard packages for common needs like SEO or PPC management." },
   { question: "What industries do you work with?", answer: "We've worked with e-commerce, SaaS, healthcare, education, real estate, restaurants, and more. Our data-driven approach adapts to any industry. Contact us to see if we're a good fit for your specific niche." },
   { question: "Can I manage my own campaigns with your guidance?", answer: "Absolutely! We offer done-with-you options where we set up campaigns and train your team to manage them. Or we can handle everything for you - just let us know what level of involvement works best." },
@@ -67,6 +68,10 @@ const testimonials = [
 const DigitalMarketing = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Seo 
+        title="Digital Marketing Agency | SEO, PPC & Growth Services - Punjab Tech"
+        description="Expert digital marketing services. SEO, Google Ads, social media marketing & content strategy. 300% avg ROI increase. Starting at $199/month. Get free audit."
+      />
       <Navbar />
       
       {/* SEO */}

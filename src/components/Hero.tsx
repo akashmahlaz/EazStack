@@ -13,7 +13,7 @@ const Hero = () => {
             transition={{ duration: 0.5 }}
             className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-primary"
           >
-            Your Startup Launch Partner
+            Startup Studio in Punjab, India
           </motion.p>
 
           <motion.h1
@@ -22,8 +22,8 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mb-6 font-heading text-5xl leading-[1.1] md:text-7xl"
           >
-            Punjab Tech Builds Startups{" "}
-            <em className="text-primary">From Scratch</em>
+            We Help Startups{" "}
+            <em className="text-primary">Launch & Scale</em>
           </motion.h1>
 
           <motion.p
@@ -91,10 +91,10 @@ const Hero = () => {
           className="mx-auto mt-16 grid max-w-3xl grid-cols-2 gap-8 md:grid-cols-4"
         >
           {[
-            { value: "10+", label: "Projects Shipped" },
-            { value: "3.2+", label: "Years Building" },
-            { value: "1", label: "App on Play Store" },
-            { value: "7+", label: "Apps Built" },
+            { value: "50+", label: "Projects Delivered" },
+            { value: "40+", label: "Happy Clients" },
+            { value: "7", label: "Apps on Play Store" },
+            { value: "4 wks", label: "Avg. MVP Time" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="font-heading text-3xl text-foreground md:text-4xl">

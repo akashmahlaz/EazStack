@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Star, Palette, PenTool, Layout, Target, TrendingUp, Users, Quote, Lightbulb, Crown, Sparkles } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 
 const stats = [
   { value: "100+", label: "Brands Designed" },
@@ -42,7 +43,7 @@ const testimonials = [
 ];
 
 const faqs = [
-  { question: "How much does professional branding cost?", answer: "Our branding packages start at ₹25,000 for logo design. Complete brand identity (logo + colors + typography + guidelines) starts at ₹50,000. We offer flexible packages based on your startup's needs." },
+  { question: "How much does professional branding cost?", answer: "Our branding packages start at $199 for logo design. Complete brand identity (logo + colors + typography + guidelines) starts at $499. We offer flexible packages based on your startup's needs." },
   { question: "How long does the branding process take?", answer: "Logo concepts are delivered within 3-5 business days. Complete brand identity with guidelines takes 7-10 business days. Rush delivery available." },
   { question: "Will I own the complete brand assets?", answer: "Yes, 100% ownership of all brand assets including source files. You receive AI, EPS, SVG, PNG formats of all designs." },
   { question: "Do you provide revisions?", answer: "Each package includes 2-3 rounds of revisions. Our goal is to ensure you're completely satisfied with the final result." },
@@ -54,6 +55,10 @@ const BrandingDesign = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       
+      <Seo 
+        title="Punjab Tech | Professional Branding & Logo Design Services - Startup Brand Identity"
+        description="Punjab's top branding agency. Logo design, brand identity & visual identity for startups. Get investor-ready branding in 3 days. Free brand consultation."
+      />
       {/* SEO */}
       <title>Punjab Tech | Professional Branding & Logo Design Services - Startup Brand Identity</title>
       <meta name="description" content="Punjab's top branding agency. Logo design, brand identity & visual identity for startups. Get investor-ready branding in 3 days. Free brand consultation." />
@@ -312,7 +317,7 @@ const BrandingDesign = () => {
             >
               <h3 className="font-heading text-xl mb-2">Logo Starter</h3>
               <p className="text-muted-foreground text-sm mb-4">For startups needing a professional logo</p>
-              <div className="font-heading text-4xl mb-6">₹25K<span className="text-lg text-muted-foreground">+</span></div>
+              <div className="font-heading text-4xl mb-6">$199<span className="text-lg text-muted-foreground">+</span></div>
               <ul className="space-y-3 text-sm mb-8">
                 <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" />1 Logo Concept</li>
                 <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" />3 Revisions</li>
@@ -333,7 +338,7 @@ const BrandingDesign = () => {
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full">Most Popular</div>
               <h3 className="font-heading text-xl mb-2">Brand Identity</h3>
               <p className="text-muted-foreground text-sm mb-4">Complete visual identity for startups</p>
-              <div className="font-heading text-4xl mb-6">₹50K<span className="text-lg text-muted-foreground">+</span></div>
+              <div className="font-heading text-4xl mb-6">$499<span className="text-lg text-muted-foreground">+</span></div>
               <ul className="space-y-3 text-sm mb-8">
                 <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" />3 Logo Concepts</li>
                 <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" />Unlimited revisions</li>
@@ -353,7 +358,7 @@ const BrandingDesign = () => {
             >
               <h3 className="font-heading text-xl mb-2">Premium Brand</h3>
               <p className="text-muted-foreground text-sm mb-4">Full brand experience for scaling startups</p>
-              <div className="font-heading text-4xl mb-6">₹1L<span className="text-lg text-muted-foreground">+</span></div>
+              <div className="font-heading text-4xl mb-6">$999<span className="text-lg text-muted-foreground">+</span></div>
               <ul className="space-y-3 text-sm mb-8">
                 <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" />5 Logo Concepts</li>
                 <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" />Complete brand identity</li>

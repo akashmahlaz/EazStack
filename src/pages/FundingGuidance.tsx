@@ -2,9 +2,10 @@ import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Star, Wallet, TrendingUp, Users, FileText, Award, Globe, Handshake, Lightbulb, MessageCircle, Target, Building2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 
 const stats = [
-  { value: "₹50Cr+", label: "Funds Raised for Clients" },
+  { value: "$5M+", label: "Funds Raised for Clients" },
   { value: "40+", label: "Startups Funded" },
   { value: "80%", label: "Pitch Success Rate" },
   { value: "100+", label: "Investor Connections" },
@@ -36,22 +37,26 @@ const services = [
 ];
 
 const testimonials = [
-  { name: "AgriTech Solutions", role: "Agritech Startup", desc: "Raised ₹2Cr seed round within 3 months. Pitch deck and investor connect were game-changing!", rating: 5 },
-  { name: "EdTech Pro", role: "Education Platform", desc: "Helped us secure ₹5Cr Series A. Their valuation guidance ensured we didn't leave money on table.", rating: 5 },
-  { name: "HealthFirst", role: "Healthcare SaaS", desc: "Government grant of ₹50L through Startup India. Complete handholding through the process.", rating: 5 },
+  { name: "AgriTech Solutions", role: "Agritech Startup", desc: "Raised $200K seed round within 3 months. Pitch deck and investor connect were game-changing!", rating: 5 },
+  { name: "EdTech Pro", role: "Education Platform", desc: "Helped us secure $500K Series A. Their valuation guidance ensured we didn't leave money on table.", rating: 5 },
+  { name: "HealthFirst", role: "Healthcare SaaS", desc: "Government grant of $5K through Startup India. Complete handholding through the process.", rating: 5 },
 ];
 
 const faqs = [
   { question: "How long does fundraising take?", answer: "Typical seed rounds take 3-6 months from start to close. We help you prepare faster so you can close quicker." },
   { question: "Whatpitch deck services do you offer?", answer: "We create complete pitch decks including story flow, financial projections, market analysis, team slides, and investor-friendly design." },
   { question: "Do you guarantee funding?", answer: "No ethical consultant can guarantee funding. However, our 80% success rate and investor network significantly improve your chances." },
-  { question: "What are typical fees for fundraising help?", answer: "Our packages range from ₹25K for pitch deck only to ₹1.5L for complete fundraising support with investor connections." },
+  { question: "What are typical fees for fundraising help?", answer: "Our packages range from $199 for pitch deck only to $1,499 for complete fundraising support with investor connections." },
   { question: "Can you help with government grants?", answer: "Yes! We assist with Startup India registration, SIDBI grants, and various state startup scheme applications." },
 ];
 
 const FundingGuidance = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Seo 
+        title="Startup Funding Guidance | Pitch Deck & Investor Connect - Punjab Tech"
+        description="Expert fundraising guidance for startups. Pitch deck creation, investor connections & government grants. $5M+ raised for clients. 80% success rate. Free consultation."
+      />
       <Navbar />
       
       {/* SEO */}

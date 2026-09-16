@@ -2,10 +2,11 @@ import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Star, Target, TrendingUp, Lightbulb, BarChart3, Globe, Users, Rocket, MapPin, Shield, MessageCircle, Award, Handshake } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 
 const stats = [
   { value: "100+", label: "Startups Advised" },
-  { value: "₹200Cr+", label: "Value Created" },
+  { value: "$24M+", label: "Value Created" },
   { value: "50+", label: "PMF Achieved" },
   { value: "3x", label: "Avg. Growth Achieved" },
 ];
@@ -52,15 +53,11 @@ const faqs = [
 const BusinessStrategy = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Seo 
+        title="Business Strategy Consulting for Startups | Punjab Tech"
+        description="Expert business strategy consulting for startups. Product-market fit, growth strategy & GTM planning. 100+ startups advised, $24M+ value created. Free consultation."
+      />
       <Navbar />
-      
-      {/* SEO */}
-      <title>Punjab Tech | Business Strategy Consulting for Startups - Growth & PMF Consulting</title>
-      <meta name="description" content="Expert business strategy consulting for startups. Product-market fit, growth strategy & GTM planning. 100+ startups advised. ₹200Cr+ value created. Free consultation." />
-      <meta name="keywords" content="business strategy consulting, startup strategy, product market fit, growth strategy consulting, GTM strategy, business consultant, startup advisor, growth consulting India, pivot strategy, market entry strategy" />
-      <meta property="og:title" content="Punjab Tech | Business Strategy Consulting - Startup Growth Partners" />
-      <meta property="og:description" content="Expert strategy consulting. Achieve PMF, scale growth, and build a winning business. 100+ startups advised. Get free consultation." />
-      <meta property="og:type" content="website" />
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-primary/5 via-background to-background pt-32 pb-20">

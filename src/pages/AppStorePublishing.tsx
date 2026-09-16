@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Star, Smartphone, Globe, AppleIcon, Play, Camera, FileText, TrendingUp, Shield, Clock, MessageCircle, Monitor, Star as StarIcon } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 
 const stats = [
   { value: "500+", label: "Apps Published" },
@@ -54,13 +55,10 @@ const AppStorePublishing = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       
-      {/* SEO */}
-      <title>Punjab Tech | App Store Publishing - Play Store & App Store Submission Services</title>
-      <meta name="description" content="Get your app published on Play Store & App Store. 100% approval guarantee, ASO optimization & fast submission. Launch in 3 days. Free consultation." />
-      <meta name="keywords" content="app store submission, play store publishing, app store optimization, ASO services, google play developer, apple developer, app approval, mobile app launch, app store guidelines, publish app India" />
-      <meta property="og:title" content="Punjab Tech | App Store Publishing - Get Your App Live in Both Stores" />
-      <meta property="og:description" content="100% approval rate. Publish your app on Play Store & App Store with ASO optimization. Launch in days, not weeks." />
-      <meta property="og:type" content="website" />
+      <Seo 
+        title="Punjab Tech | App Store Publishing - Play Store & App Store Submission Services"
+        description="Get your app published on Play Store & App Store. 100% approval guarantee, ASO optimization & fast submission. Launch in 3 days. Free consultation."
+      />
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-primary/5 via-background to-background pt-32 pb-20">
@@ -311,7 +309,7 @@ const AppStorePublishing = () => {
             >
               <h3 className="font-heading text-xl mb-2">Single Store</h3>
               <p className="text-muted-foreground text-sm mb-4">Play Store OR App Store</p>
-              <div className="font-heading text-4xl mb-6">₹15K<span className="text-lg text-muted-foreground">+</span></div>
+              <div className="font-heading text-4xl mb-6">$99<span className="text-lg text-muted-foreground">+</span></div>
               <ul className="space-y-3 text-sm mb-8">
                 <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" />One store submission</li>
                 <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" />Listing optimization</li>
@@ -332,7 +330,7 @@ const AppStorePublishing = () => {
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full">Most Popular</div>
               <h3 className="font-heading text-xl mb-2">Both Stores</h3>
               <p className="text-muted-foreground text-sm mb-4">Play Store + App Store</p>
-              <div className="font-heading text-4xl mb-6">₹25K<span className="text-lg text-muted-foreground">+</span></div>
+              <div className="font-heading text-4xl mb-6">$199<span className="text-lg text-muted-foreground">+</span></div>
               <ul className="space-y-3 text-sm mb-8">
                 <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" />Both stores submission</li>
                 <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" />Full ASO optimization</li>
@@ -352,7 +350,7 @@ const AppStorePublishing = () => {
             >
               <h3 className="font-heading text-xl mb-2">Launch Premium</h3>
               <p className="text-muted-foreground text-sm mb-4">Complete package with ASO</p>
-              <div className="font-heading text-4xl mb-6">₹40K<span className="text-lg text-muted-foreground">+</span></div>
+              <div className="font-heading text-4xl mb-6">$299<span className="text-lg text-muted-foreground">+</span></div>
               <ul className="space-y-3 text-sm mb-8">
                 <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" />Both stores + developer accounts</li>
                 <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" />Advanced ASO</li>

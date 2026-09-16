@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Star, Link2, Database, Workflow, BarChart3, Shield, Zap, Globe, Settings, MessageCircle, Target, TrendingUp } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 
 const stats = [
   { value: "100+", label: "CRM Implementations" },
@@ -44,7 +45,7 @@ const testimonials = [
 const faqs = [
   { question: "Which CRM is best for my startup?", answer: "It depends on your needs and budget. HubSpot is great for startups (free tier available), Salesforce for enterprise features, and Zoho for cost-effective solutions. We help you choose based on your specific requirements." },
   { question: "How long does CRM implementation take?", answer: "Basic setup takes 3-5 business days. Full implementation with custom integrations and team training typically takes 2-3 weeks." },
-  { question: "Do you provide ongoing support?", answer: "Yes! We offer monthly support packages starting at ₹10,000/month including bug fixes, new integrations, and optimization." },
+  { question: "Do you provide ongoing support?", answer: "Yes! We offer monthly support packages starting at $199/month including bug fixes, new integrations, and optimization." },
   { question: "Can you migrate data from our old CRM?", answer: "Absolutely. We handle complete data migration including contacts, deals, activities, and historical data with zero data loss." },
   { question: "Will my team actually use the CRM?", answer: "We provide comprehensive training and make the system intuitive. Our implementations focus on adoption—we configure the CRM to match your team's workflow, not the other way around." },
 ];
@@ -52,6 +53,10 @@ const faqs = [
 const CrmIntegration = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Seo 
+        title="CRM Integration Services | HubSpot, Salesforce Setup - Punjab Tech"
+        description="Expert CRM integration services. Setup HubSpot, Salesforce, Zoho for your startup. Data migration, automation & training. Starting at $299. Free consultation."
+      />
       <Navbar />
       
       {/* SEO */}
