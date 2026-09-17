@@ -2,67 +2,58 @@ import { motion } from "framer-motion";
 import { Linkedin, Twitter, Mail, ArrowRight } from "lucide-react";
 
 import teamCeo from "@/assets/team-ceo.png";
-import teamDesigner from "@/assets/team-designer.jpg";
-import teamDev from "@/assets/team-dev.jpg";
-import teamMarketing from "@/assets/team-marketing.jpg";
-import teamConsultant from "@/assets/team-consultant.jpg";
+import teamDesigner from "@/assets/sahil.png";
+import teamDev from "@/assets/satinder.png";
+import teamMarketing from "@/assets/vickeramjit-singh.png";
+import teamConsultant from "@/assets/arshdeep.png";
 import teamGrowth from "@/assets/team-growth.jpg";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Seo from "@/components/Seo";
 
 const team = [
-  { 
-    name: "Akash Mehla", 
-    role: "Founder & CEO", 
-    img: teamCeo, 
+  {
+    name: "Akash Mahla",
+    role: "Founder & CEO",
+    img: teamCeo,
     desc: "Visionary leader with 10+ years in startup ecosystems. Passionate about helping entrepreneurs turn ideas into successful businesses.",
     skills: ["Strategy", "Leadership", "Business Development"],
     linkedin: "#",
     twitter: "#"
   },
-  { 
-    name: "Maya Chen", 
-    role: "Lead Designer", 
-    img: teamDesigner, 
+  {
+    name: "Sahil Dutt",
+    role: "Lead Designer & Frontend Developer",
+    img: teamDesigner,
     desc: "Crafts pixel-perfect brands and digital experiences. Award-winning designer with a passion for creating memorable user journeys.",
     skills: ["UI/UX Design", "Brand Identity", "Figma"],
-    linkedin: "#",
-    twitter: "#"
+    linkedin: "https://www.linkedin.com/in/sahildutt/?skipRedirect=true",
+    twitter: "https://sahilduttpb06.github.io/sahilportfolio/"
   },
-  { 
-    name: "Ravi Patel", 
-    role: "Head of Engineering", 
-    img: teamDev, 
+  {
+    name: "Satinder Singh",
+    role: "Head of Engineering & iOS Developer",
+    img: teamDev,
     desc: "Full-stack architect building scalable products. Expert in React Native, Node.js, and cloud infrastructure.",
     skills: ["React Native", "Node.js", "AWS"],
     linkedin: "#",
     twitter: "#"
   },
-  { 
-    name: "Sarah Kim", 
-    role: "Marketing Director", 
-    img: teamMarketing, 
+  {
+    name: "Vickeramjit Singh",
+    role: "Business Analyst & Strategist",
+    img: teamMarketing,
     desc: "Growth strategist who scales brands from zero. Data-driven marketer with expertise in digital campaigns.",
     skills: ["Growth Marketing", "SEO", "PPC"],
     linkedin: "#",
     twitter: "#"
   },
-  { 
-    name: "James Walker", 
-    role: "Business Consultant", 
-    img: teamConsultant, 
+  {
+    name: "Arshdeep Singh",
+    role: "Business Consultant & Finance",
+    img: teamConsultant,
     desc: "Guides startups through funding and strategy. Former VC with deep expertise in fundraising and business planning.",
     skills: ["Fundraising", "Business Strategy", "Finance"],
-    linkedin: "#",
-    twitter: "#"
-  },
-  { 
-    name: "Zara Ali", 
-    role: "Growth Lead", 
-    img: teamGrowth, 
-    desc: "Social media & community building expert. Specializes in building engaged communities and viral growth strategies.",
-    skills: ["Social Media", "Community", "Content"],
     linkedin: "#",
     twitter: "#"
   },
@@ -80,12 +71,12 @@ const TeamPage = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <Seo title="Punjab Tech | Team - Meet The Crew" description="Meet the expert team behind Punjab Tech. Our talented developers, designers, and strategists are ready to launch your startup." />
-      
+
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
         <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl" />
-        
+
         <div className="container mx-auto px-6 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -100,7 +91,7 @@ const TeamPage = () => {
               The People Behind Your Success
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              A diverse team of experts committed to launching your startup. 
+              A diverse team of experts committed to launching your startup.
               We combine passion, expertise, and creativity to bring your vision to life.
             </p>
           </motion.div>
