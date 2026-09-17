@@ -49,7 +49,7 @@ const services = [
   { 
     title: "Portfolio Sites", 
     desc: "Creative showcases for agencies, freelancers, and creators.",
-    bulletS: ["Visual storytelling", "Performance optimized", "Contact integrations", "SEO ready"]
+    bullets: ["Visual storytelling", "Performance optimized", "Contact integrations", "SEO ready"]
   },
 ];
 
@@ -106,13 +106,11 @@ const webPricingTiers = [
 ];
 
 const WebDevelopment = () => {
-const testimonials = [
-  { name: "Tech Startup", role: "SaaS Dashboard", desc: "Built our entire product dashboard. Excellent code quality and communication.", rating: 5 },
-  { name: "Restaurant Chain", role: "Online Ordering", desc: "E-commerce site increased orders by 40% in first month. Highly recommended.", rating: 5 },
-  { name: "Consulting Firm", role: "Corporate Website", desc: "Professional, fast, and exactly what we needed. Great experience.", rating: 5 },
-];
-
-const WebDevelopment = () => {
+  const testimonials = [
+    { name: "Tech Startup", role: "SaaS Dashboard", desc: "Built our entire product dashboard. Excellent code quality and communication.", rating: 5 },
+    { name: "Restaurant Chain", role: "Online Ordering", desc: "E-commerce site increased orders by 40% in first month. Highly recommended.", rating: 5 },
+    { name: "Consulting Firm", role: "Corporate Website", desc: "Professional, fast, and exactly what we needed. Great experience.", rating: 5 },
+  ];
   return (
     <div className="min-h-screen bg-background">
       <Seo 
@@ -426,17 +424,8 @@ const WebDevelopment = () => {
                 ))}
               </ul>
               <a href="https://wa.me/917814002784?text=Interested%20in%20{tier.name}" className={`block text-center rounded-full py-3 font-semibold transition-all ${tier.popular ? 'bg-gradient-warm text-primary-foreground hover:shadow-warm' : 'border border-border hover:bg-background'}`}>Get Started</a>
-          </motion.div>
-          ))}
-              <ul className="space-y-3 text-sm mb-8">
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> Unlimited products</li>
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> Payment integration</li>
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> Order management</li>
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> 3-6 weeks delivery</li>
-                <li className="flex gap-2"><CheckCircle2 size={16} className="text-primary" /> Admin dashboard</li>
-              </ul>
-              <a href="/contact" className="block text-center rounded-full border border-border py-3 font-medium hover:bg-background transition-colors">Get Started</a>
             </motion.div>
+          ))}
           </div>
         </div>
       </section>

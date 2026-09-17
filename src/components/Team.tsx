@@ -2,19 +2,17 @@ import { motion } from "framer-motion";
 import { Linkedin, Twitter } from "lucide-react";
 
 import teamCeo from "@/assets/team-ceo.png";
-import teamDesigner from "@/assets/team-designer.jpg";
-import teamDev from "@/assets/team-dev.jpg";
-import teamMarketing from "@/assets/team-marketing.jpg";
-import teamConsultant from "@/assets/team-consultant.jpg";
-import teamGrowth from "@/assets/team-growth.jpg";
+import teamDesigner from "@/assets/sahil.png";
+import teamDev from "@/assets/satinder.png";
+import teamMarketing from "@/assets/vickeramjit-singh.png";
+import teamConsultant from "@/assets/arshdeep.png";
 
 const members = [
-  { name: "Akash Mehla", role: "Founder & CEO", img: teamCeo, desc: "Visionary leader with 10+ years in startup ecosystems." },
-  { name: "Maya Chen", role: "Lead Designer", img: teamDesigner, desc: "Crafts pixel-perfect brands and digital experiences." },
-  { name: "Ravi Patel", role: "Head of Engineering", img: teamDev, desc: "Full-stack architect building scalable products." },
-  { name: "Sarah Kim", role: "Marketing Director", img: teamMarketing, desc: "Growth strategist who scales brands from zero." },
-  { name: "James Walker", role: "Business Consultant", img: teamConsultant, desc: "Guides startups through funding and strategy." },
-  { name: "Zara Ali", role: "Growth Lead", img: teamGrowth, desc: "Social media & community building expert." },
+  { name: "Akash Mahla", role: "Founder & CEO", img: teamCeo, desc: "Exceptional Software Engineering, Product Engineering & 5 years Startup ecosystem experience." },
+  { name: "Sahil Dutt", role: "Lead Designer & frontend developer", img: teamDesigner, desc: "Crafts pixel-perfect brands and digital experiences." },
+  { name: "Satinder Singh", role: "iOS & Android Developer", img: teamDev, desc: "Full-stack architect building scalable products." },
+  { name: "Vickeramjit Singh", role: "Business Analyst & AI Product Engineer", img: teamMarketing, desc: "Growth strategist who scales brands from zero." },
+  { name: "Arshdeep Singh", role: "Business Consultant", img: teamConsultant, desc: "Guides startups through funding and strategy." },
 ];
 
 const Team = () => {

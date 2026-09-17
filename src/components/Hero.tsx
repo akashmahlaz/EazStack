@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import heroImage from "@/assets/image.png";
+import heroImage from "@/assets/our.png";
 
 const Hero = () => {
   return (
@@ -62,9 +62,9 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground"
           >
-            <span>✉️ akashdalla406@gmail.com</span>
+            {/*<span>✉️ akashdalla406@gmail.com</span>
             <span>+91 78140 02784</span>
-            <a href="https://wa.me/917814002784" className="hover:text-foreground">💬 WhatsApp</a>
+            <a href="https://wa.me/917814002784" className="hover:text-foreground">💬 WhatsApp</a>*/}
           </motion.div>
         </div>
 
