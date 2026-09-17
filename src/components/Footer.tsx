@@ -1,6 +1,10 @@
 const Footer = () => {
   return (
     <footer className="border-t border-border py-12">
+      <div className="container mx-auto mb-10 max-w-4xl px-6 text-center">
+        <p className="font-heading text-xl text-foreground">A clearer way to buy digital services</p>
+        <p className="mt-2 text-sm leading-6 text-muted-foreground">Every proposal defines deliverables, milestones, ownership, exclusions, and support before work starts. Prices shown are starting investments in USD unless a government fee requires INR.</p>
+      </div>
       <div className="container mx-auto flex flex-col items-center justify-between gap-6 px-6 md:flex-row">
         <div className="font-heading text-xl text-foreground">
           Punjab<span className="text-primary">Tech</span>

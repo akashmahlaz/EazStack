@@ -2,7 +2,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import Team from "./pages/Team";
@@ -25,12 +26,23 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+const RouteCanonical = () => {
+  const location = useLocation();
+  useEffect(() => {
+    const url = `https://punjabtech.online${location.pathname}`;
+    document.querySelector('link[rel="canonical"]')?.setAttribute("href", url);
+    document.querySelector('meta[property="og:url"]')?.setAttribute("content", url);
+  }, [location.pathname]);
+  return null;
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <RouteCanonical />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />

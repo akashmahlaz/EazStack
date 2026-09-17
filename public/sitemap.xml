@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemap.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <url><loc>https://launchcrew-one.vercel.app/</loc><changefreq>monthly</changefreq><priority>1.0</priority>
-    <image:image><image:loc>https://akashmahla.com/og-image.png</image:loc><image:caption>Punjab Tech — App Development Studio</image:caption></image:image>
-  </url>
-  <url><loc>https://launchcrew-one.vercel.app/app-development</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://akashmahla.com/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://github.com/akashmahlaz</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://punjabtech.online/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://punjabtech.online/services</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://punjabtech.online/app-development</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://punjabtech.online/web-development</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://punjabtech.online/digital-marketing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://punjabtech.online/branding-design</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://punjabtech.online/social-media-growth</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://punjabtech.online/legal</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://punjabtech.online/app-store-publishing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://punjabtech.online/crm-integration</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://punjabtech.online/funding-guidance</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://punjabtech.online/payment-integration</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://punjabtech.online/business-strategy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://punjabtech.online/hiring-support</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://punjabtech.online/ongoing-support</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://punjabtech.online/team</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://punjabtech.online/process</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://punjabtech.online/contact</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>

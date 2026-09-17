@@ -3,13 +3,12 @@ import { ArrowRight, CheckCircle2, Star, Zap, Shield, Clock, Globe, Smartphone, 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Seo from "@/components/Seo";
-import { useState } from "react";
 
 const stats = [
-  { value: "50+", label: "Apps Delivered" },
-  { value: "7+", label: "Apps on Play Store" },
-  { value: "4 Weeks", label: "Average MVP Time" },
-  { value: "100%", label: "Success Rate" },
+  { value: "iOS + Android", label: "One shared codebase" },
+  { value: "Milestones", label: "Clear delivery stages" },
+  { value: "30 days", label: "Post-launch warranty" },
+  { value: "You own it", label: "Code handoff on final payment" },
 ];
 
 const process = [
@@ -40,11 +39,11 @@ const techStack = [
 ];
 
 const faqs = [
-  { question: "How much does it cost to build a mobile app?", answer: "Our MVP package starts at $499 - one of the most competitive rates in the market. Growth and Enterprise packages are available at $1,499 and $3,999 respectively. We offer flexible payment terms and startup discounts." },
+  { question: "How much does it cost to build a mobile app?", answer: "A clickable prototype and technical plan starts at $750. A production mobile MVP starts at $2,900, and larger products are quoted after discovery. Your written proposal will state the features, timeline, third-party costs, and payment milestones before work begins." },
   { question: "How long does it take to develop a mobile app?", answer: "MVP development takes 4-6 weeks. More complex apps with advanced features take 8-16 weeks. We follow agile methodology with 2-week sprints for predictable delivery." },
   { question: "Will I own the source code?", answer: "Yes, you get 100% ownership of all source code, designs, and intellectual property. We provide well-documented, clean code that any developer can work with." },
-  { question: "Do you provide app store submission?", answer: "Yes, we handle complete Play Store and App Store submission including account setup, metadata, screenshots, app preview videos, and review handling. Your app goes live in both stores." },
-  { question: "What happens after my app is launched?", answer: "We provide 30 days of free post-launch support to handle any bugs or issues. After that, we offer optional maintenance packages starting at $99/month for ongoing updates and support." },
+  { question: "Do you provide app store submission?", answer: "We can prepare and submit your release to Google Play and the App Store. Developer-account fees, store review decisions, paid media, and work outside the agreed scope are always itemized separately." },
+  { question: "What happens after my app is launched?", answer: "Every build includes a 30-day bug-fix warranty for the agreed scope, plus repository and access handoff. Ongoing maintenance is available with a defined monthly hour bank and response targets." },
 ];
 
 const testimonials = [
@@ -53,63 +52,42 @@ const testimonials = [
   { name: "HiringBull", role: "Job Portal App", desc: "From concept to launch in 6 weeks. Great communication throughout.", rating: 5 },
 ];
 
-// Pricing tiers with US Dollar for global positioning
 const pricingTiers = [
   {
-    name: "MVP Launch",
-    price: "$499",
-    originalPrice: "$999",
-    desc: "Perfect for validating your startup idea",
+    name: "Discovery Sprint",
+    price: "From $750 USD",
+    desc: "Validate the product before committing to a build",
     features: [
-      "Core 5-7 features",
-      "iOS & Android apps",
-      "Basic UI/UX design",
-      "User authentication",
-      "Push notifications",
-      "Admin dashboard",
-      "4-week delivery",
-      "30-day support"
+      "Product discovery workshop", "Feature prioritization", "Clickable prototype", "Technical architecture", "Build estimate & timeline", "Handoff-ready scope document"
     ],
     popular: false,
-    cta: "Start MVP"
+    cta: "Plan My App"
   },
   {
-    name: "Growth",
-    price: "$1,499",
-    originalPrice: "$2,999",
-    desc: "For startups ready to scale",
+    name: "Mobile MVP",
+    price: "From $2,900 USD",
+    desc: "A focused production app for iOS and Android",
     features: [
-      "10-15 advanced features",
+      "Prioritized MVP feature set",
       "iOS & Android apps",
-      "Premium UI/UX design",
-      "Payment integration",
-      "Real-time features",
-      "Analytics dashboard",
-      "API integrations",
-      "6-week delivery",
-      "90-day support"
+      "Custom UI/UX design", "Authentication and core backend", "QA and release preparation", "Source-code handoff", "30-day bug-fix warranty"
     ],
     popular: true,
-    cta: "Most Popular"
+    cta: "Scope My MVP"
   },
   {
-    name: "Enterprise",
-    price: "$3,999",
-    originalPrice: "$7,999",
-    desc: "Full-featured app with all extras",
+    name: "Growth Product",
+    price: "From $7,500 USD",
+    desc: "For multi-role products and deeper integrations",
     features: [
-      "Unlimited features",
-      "iOS & Android + Web",
+      "Multi-role product architecture", "iOS, Android, and web scope",
       "Custom UI/UX design",
-      "Advanced security",
-      "AI/ML integration",
+      "API and payment integrations", "Analytics and admin workflows", "Security review",
       "Custom admin panel",
-      "Third-party APIs",
-      "10-week delivery",
-      "1-year support"
+      "Phased release plan"
     ],
     popular: false,
-    cta: "Go Enterprise"
+    cta: "Discuss My Product"
   }
 ];
 
@@ -118,17 +96,9 @@ const AppDevelopment = () => {
     <div className="min-h-screen bg-background">
       <Seo 
         title="Mobile App Development Company | React Native Apps - Punjab Tech"
-        description="Expert mobile app development services. Build iOS & Android apps with React Native. MVP in 4 weeks, Play Store publishing included. Starting at $499. Free consultation."
+        description="Mobile app discovery, MVP development, and release support for iOS and Android. Clear scope, milestone billing, and source-code handoff. From $750 USD."
       />
       <Navbar />
-
-      {/* SEO */}
-      <title>Punjab Tech | Mobile App Development Company - React Native, iOS & Android</title>
-      <meta name="description" content="Hire Punjab's top mobile app development company. React Native experts building iOS & Android apps. MVP in 4 weeks, Play Store submission included. Get free quote." />
-      <meta name="keywords" content="mobile app development company, React Native app development, hire mobile app developer, iOS Android app development, MVP development, cross-platform app development, Play Store submission, mobile app development Punjab, app development India" />
-      <meta property="og:title" content="Punjab Tech | Mobile App Development Company - React Native Experts" />
-      <meta property="og:description" content="Build your dream mobile app with Punjab's leading React Native developers. MVP in 4 weeks, Play Store ready. Get free consultation." />
-      <meta property="og:type" content="website" />
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-primary/5 via-background to-background pt-32 pb-20">
@@ -146,7 +116,7 @@ const AppDevelopment = () => {
             >
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
                 <Star size={14} className="fill-primary" />
-                Rated #1 App Development Company in Punjab
+                India-based, remote-first product studio
               </span>
             </motion.div>
 
@@ -451,9 +421,9 @@ const AppDevelopment = () => {
             className="text-center mb-16"
           >
             <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Pricing</span>
-            <h2 className="font-heading text-4xl md:text-5xl mt-4">Simple, Transparent Pricing</h2>
+            <h2 className="font-heading text-4xl md:text-5xl mt-4">Clear Starting Points, Not Fake Fixed Quotes</h2>
             <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-              Startup-friendly pricing designed to help you enter the market. All packages include full source code ownership.
+              USD prices are starting investments. Your written scope names the deliverables, timeline, and payment milestones before work begins.
             </p>
           </motion.div>
 
@@ -474,7 +444,6 @@ const AppDevelopment = () => {
                 <p className="text-muted-foreground text-sm mb-4">{tier.desc}</p>
                 <div className="mb-6">
                   <span className="font-heading text-4xl">{tier.price}</span>
-                  <span className="text-lg text-muted-foreground line-through ml-2">{tier.originalPrice}</span>
                 </div>
                 <ul className="space-y-3 text-sm mb-8">
                   {tier.features.map((feature) => (
@@ -482,7 +451,7 @@ const AppDevelopment = () => {
                   ))}
                 </ul>
                 <a 
-                  href="https://wa.me/917814002784?text=Hi%20Akash,%20interested%20in%20{tier.name}%20package" 
+                  href={`https://wa.me/917814002784?text=${encodeURIComponent(`Hi Akash, I’m interested in the ${tier.name} package.`)}`}
                   className={`block text-center rounded-full py-3 font-semibold transition-all ${tier.popular ? 'bg-gradient-warm text-primary-foreground hover:shadow-warm' : 'border border-border hover:bg-background'}`}
                 >
                   {tier.cta}
@@ -490,6 +459,9 @@ const AppDevelopment = () => {
               </motion.div>
             ))}
           </div>
+          <p className="mx-auto mt-8 max-w-3xl text-center text-sm leading-6 text-muted-foreground">
+            Excludes Apple/Google developer accounts, hosting, paid services, taxes, and change requests outside the signed scope. Milestone billing: 40% to start, 40% at working demo, and 20% at handoff.
+          </p>
         </div>
       </section>
 

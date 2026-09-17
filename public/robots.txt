@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://launchcrew-one.vercel.app/sitemap.xml
-Sitemap: https://akashmahla.com/sitemap.xml
+Sitemap: https://punjabtech.online/sitemap.xml
