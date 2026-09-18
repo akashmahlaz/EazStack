@@ -18,9 +18,9 @@ const CTA = () => {
             <p className="mx-auto mb-2 max-w-xl text-lg text-muted-foreground">
               Book a free, no-strings call. We'll map out your app, tech stack, timeline, and budget.
             </p>
-            <p className="mb-8 text-sm text-muted-foreground">
+            {/* <p className="mb-8 text-sm text-muted-foreground">
               WhatsApp • +91 78140 02784 • akashdalla406@gmail.com
-            </p>
+            </p> */}
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
                 href="https://wa.me/917814002784?text=Hi%20Akash%2C%20I%27d%20like%20to%20chat%20about%20a%20project"

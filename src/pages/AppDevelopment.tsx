@@ -3,12 +3,13 @@ import { ArrowRight, CheckCircle2, Star, Zap, Shield, Clock, Globe, Smartphone, 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Seo from "@/components/Seo";
+import appPortfolioPreviews from "@/assets/app-portfolio-previews.png";
 
 const stats = [
-  { value: "iOS + Android", label: "One shared codebase" },
-  { value: "Milestones", label: "Clear delivery stages" },
-  { value: "30 days", label: "Post-launch warranty" },
-  { value: "You own it", label: "Code handoff on final payment" },
+  { value: "50+", label: "Apps Delivered" },
+  { value: "7+", label: "Apps on Play Store" },
+  { value: "4 Weeks", label: "Average MVP Time" },
+  { value: "100%", label: "Success Rate" },
 ];
 
 const process = [
@@ -52,42 +53,52 @@ const testimonials = [
   { name: "HiringBull", role: "Job Portal App", desc: "From concept to launch in 6 weeks. Great communication throughout.", rating: 5 },
 ];
 
+const featuredApps = [
+  { name: "280days: Pregnancy Diary", category: "Parenting", url: "https://play.google.com/store/apps/details?id=com.amanefactory.totsukitoka", color: "text-rose-500", bg: "bg-rose-500/10" },
+  { name: "Puppy-Center", category: "Dog breeding & care", url: "https://play.google.com/store/apps/details?id=com.puppycenter", color: "text-amber-600", bg: "bg-amber-500/10" },
+  { name: "Streams", category: "Live-streaming platform", url: "https://play.google.com/store/apps/details?id=com.akashmahlax.streams", color: "text-sky-600", bg: "bg-sky-500/10" },
+  { name: "eCom on Demand", category: "eCommerce community", url: "https://play.google.com/store/apps/details?id=com.mightybell.ecomondemand&hl=en_IN", color: "text-violet-600", bg: "bg-violet-500/10" },
+];
+
 const pricingTiers = [
   {
-    name: "Discovery Sprint",
-    price: "From $750 USD",
-    desc: "Validate the product before committing to a build",
+    name: "MVP Launch",
+    price: "$499",
+    originalPrice: "$999",
+    desc: "Perfect for validating your startup idea",
     features: [
-      "Product discovery workshop", "Feature prioritization", "Clickable prototype", "Technical architecture", "Build estimate & timeline", "Handoff-ready scope document"
+      "Core 5-7 features", "iOS & Android apps", "Basic UI/UX design", "User authentication", "Push notifications", "Admin dashboard", "4-week delivery", "30-day support"
     ],
     popular: false,
-    cta: "Plan My App"
+    cta: "Start MVP"
   },
   {
-    name: "Mobile MVP",
-    price: "From $2,900 USD",
-    desc: "A focused production app for iOS and Android",
+    name: "Growth",
+    price: "$1,499",
+    originalPrice: "$2,999",
+    desc: "For startups ready to scale",
     features: [
-      "Prioritized MVP feature set",
+      "10-15 advanced features",
       "iOS & Android apps",
-      "Custom UI/UX design", "Authentication and core backend", "QA and release preparation", "Source-code handoff", "30-day bug-fix warranty"
+      "Premium UI/UX design", "Payment integration", "Real-time features", "Analytics dashboard", "API integrations", "6-week delivery", "90-day support"
     ],
     popular: true,
-    cta: "Scope My MVP"
+    cta: "Most Popular"
   },
   {
-    name: "Growth Product",
-    price: "From $7,500 USD",
-    desc: "For multi-role products and deeper integrations",
+    name: "Enterprise",
+    price: "$3,999",
+    originalPrice: "$7,999",
+    desc: "Full-featured app with all extras",
     features: [
-      "Multi-role product architecture", "iOS, Android, and web scope",
+      "Unlimited features", "iOS & Android + Web",
       "Custom UI/UX design",
-      "API and payment integrations", "Analytics and admin workflows", "Security review",
+      "Advanced security", "AI/ML integration",
       "Custom admin panel",
-      "Phased release plan"
+      "Third-party APIs", "10-week delivery", "1-year support"
     ],
     popular: false,
-    cta: "Discuss My Product"
+    cta: "Go Enterprise"
   }
 ];
 
@@ -96,7 +107,7 @@ const AppDevelopment = () => {
     <div className="min-h-screen bg-background">
       <Seo 
         title="Mobile App Development Company | React Native Apps - Punjab Tech"
-        description="Mobile app discovery, MVP development, and release support for iOS and Android. Clear scope, milestone billing, and source-code handoff. From $750 USD."
+        description="Expert mobile app development services. Build iOS & Android apps with React Native. MVP in 4 weeks, Play Store publishing included. Starting at $499. Free consultation."
       />
       <Navbar />
 
@@ -116,7 +127,7 @@ const AppDevelopment = () => {
             >
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
                 <Star size={14} className="fill-primary" />
-                India-based, remote-first product studio
+                Rated #1 App Development Company in Punjab
               </span>
             </motion.div>
 
@@ -338,75 +349,24 @@ const AppDevelopment = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Our Work</span>
-            <h2 className="font-heading text-4xl md:text-5xl mt-4">Apps We've Shipped</h2>
+            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Selected App Work</span>
+            <h2 className="font-heading text-4xl md:text-5xl mt-4">See the Products in the Play Store</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">Each card links directly to its public Play Store listing. The interface artwork is an illustrative product preview; the app-store links are the independently verifiable proof.</p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="rounded-2xl border border-border bg-card p-6 text-center"
-            >
-              <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-green-500/10 flex items-center justify-center">
-                <Play className="w-8 h-8 text-green-500" />
-              </div>
-              <h3 className="font-heading text-xl mb-2">Mindset</h3>
-              <p className="text-sm text-muted-foreground mb-4">Mindfulness & Wellness App</p>
-              <a
-                href="https://play.google.com/store/apps/details?id=com.mindset.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary text-sm font-medium hover:underline"
-              >
-                View on Play Store →
-              </a>
-            </motion.div>
+          <div className="mx-auto mb-10 max-w-5xl overflow-hidden rounded-3xl border border-border bg-card p-3 shadow-warm">
+            <img src={appPortfolioPreviews} alt="Illustrative mobile product interface previews" className="h-auto w-full rounded-2xl" loading="lazy" />
+          </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="rounded-2xl border border-border bg-card p-6 text-center"
-            >
-              <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-blue-500/10 flex items-center justify-center">
-                <Globe className="w-8 h-8 text-blue-500" />
-              </div>
-              <h3 className="font-heading text-xl mb-2">Sailors Platform</h3>
-              <p className="text-sm text-muted-foreground mb-4">Maritime Social Network</p>
-              <a
-                href="https://sailorsplatform.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary text-sm font-medium hover:underline"
-              >
-                Visit Website →
-              </a>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="rounded-2xl border border-border bg-card p-6 text-center"
-            >
-              <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-orange-500/10 flex items-center justify-center">
-                <BarChart3 className="w-8 h-8 text-orange-500" />
-              </div>
-              <h3 className="font-heading text-xl mb-2">HiringBull</h3>
-              <p className="text-sm text-muted-foreground mb-4">Job Portal Application</p>
-              <a
-                href="https://hiringbull.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary text-sm font-medium hover:underline"
-              >
-                Visit Website →
-              </a>
-            </motion.div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 max-w-5xl mx-auto">
+            {featuredApps.map((app, index) => (
+              <motion.a key={app.name} href={app.url} target="_blank" rel="noopener noreferrer" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.08 }} className="rounded-2xl border border-border bg-card p-6 text-center transition-all hover:-translate-y-1 hover:shadow-warm">
+                <div className={`w-16 h-16 mx-auto mb-4 rounded-xl ${app.bg} flex items-center justify-center`}><Play className={`w-8 h-8 ${app.color}`} /></div>
+                <h3 className="font-heading text-xl mb-2">{app.name}</h3>
+                <p className="text-sm text-muted-foreground mb-4">{app.category}</p>
+                <span className="text-primary text-sm font-medium">View on Play Store →</span>
+              </motion.a>
+            ))}
           </div>
         </div>
       </section>
@@ -421,9 +381,9 @@ const AppDevelopment = () => {
             className="text-center mb-16"
           >
             <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Pricing</span>
-            <h2 className="font-heading text-4xl md:text-5xl mt-4">Clear Starting Points, Not Fake Fixed Quotes</h2>
+            <h2 className="font-heading text-4xl md:text-5xl mt-4">Simple, Transparent Pricing</h2>
             <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-              USD prices are starting investments. Your written scope names the deliverables, timeline, and payment milestones before work begins.
+              Startup-friendly pricing designed to help you enter the market. All packages include full source code ownership.
             </p>
           </motion.div>
 
@@ -444,6 +404,7 @@ const AppDevelopment = () => {
                 <p className="text-muted-foreground text-sm mb-4">{tier.desc}</p>
                 <div className="mb-6">
                   <span className="font-heading text-4xl">{tier.price}</span>
+                  <span className="text-lg text-muted-foreground line-through ml-2">{tier.originalPrice}</span>
                 </div>
                 <ul className="space-y-3 text-sm mb-8">
                   {tier.features.map((feature) => (
@@ -459,9 +420,7 @@ const AppDevelopment = () => {
               </motion.div>
             ))}
           </div>
-          <p className="mx-auto mt-8 max-w-3xl text-center text-sm leading-6 text-muted-foreground">
-            Excludes Apple/Google developer accounts, hosting, paid services, taxes, and change requests outside the signed scope. Milestone billing: 40% to start, 40% at working demo, and 20% at handoff.
-          </p>
+          <p className="mx-auto mt-8 max-w-3xl text-center text-sm leading-6 text-muted-foreground">Final scope, delivery dates, platform fees, and payment milestones are confirmed in writing before work begins.</p>
         </div>
       </section>
 

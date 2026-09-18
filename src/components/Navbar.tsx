@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Menu, X, ShieldCheck } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,9 +19,6 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
       className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl"
     >
-      <div className="border-b border-border/40 bg-card/60 px-4 py-2 text-center text-xs text-muted-foreground">
-        <span className="inline-flex items-center gap-2"><ShieldCheck size={14} className="text-primary" /> Clear scope · Milestone billing · Source-code handoff on final payment</span>
-      </div>
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         <a href="/" className="font-heading text-2xl tracking-tight text-foreground">
           Punjab<span className="text-primary">Tech</span>
