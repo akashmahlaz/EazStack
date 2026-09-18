@@ -16,8 +16,8 @@ const Footer = () => {
           <a href="/contact" className="text-muted-foreground transition-colors hover:text-foreground">Contact</a>
         </div>
         <div className="flex items-center gap-4 text-sm text-muted-foreground">
-          <a href="mailto:akashdalla406@gmail.com" className="hover:text-foreground">akashdalla406@gmail.com</a>
-          <a href="https://wa.me/917814002784" className="hover:text-foreground">+91 78140 02784</a>
+          {/* <a href="mailto:akashdalla406@gmail.com" className="hover:text-foreground">akashdalla406@gmail.com</a>
+          <a href="https://wa.me/917814002784" className="hover:text-foreground">+91 78140 02784</a> */}
         </div>
         <p className="text-sm text-muted-foreground">
           © 2026 Punjab Tech. All rights reserved.
