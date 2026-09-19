@@ -1,8 +1,31 @@
 import { motion } from "framer-motion";
-import { ArrowRight, ExternalLink, Download, Smartphone, Globe, Sparkles } from "lucide-react";
-import appMockups from "@/assets/mobile-apps.png";
+import {
+  ArrowRight,
+  ExternalLink,
+  Download,
+  Smartphone,
+  Globe,
+  Sparkles,
+  Play,
+  Pause,
+} from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { useState, useRef, type ReactNode } from "react";
 
-/* ── browser chrome frame ─────────────────────────────── */
+import appMockups from "@/assets/mobile-apps.png";
+import appPortfolioPreviews from "@/assets/app-portfolio-previews.png";
+import mobileVideo from "@/assets/mobile-video.mp4";
+
+/* ─────────────────────────────────────────────────────────────
+   Browser chrome frame
+───────────────────────────────────────────────────────────── */
+
 const BrowserFrame = ({
   url,
   variant = "light",
@@ -10,28 +33,31 @@ const BrowserFrame = ({
 }: {
   url: string;
   variant?: "light" | "dark";
-  children: React.ReactNode;
+  children: ReactNode;
 }) => (
   <div
-    className={`rounded-xl overflow-hidden border shadow-lg ${
+    className={`overflow-hidden rounded-xl border shadow-lg ${
       variant === "dark"
         ? "border-white/10 shadow-white/5"
         : "border-border shadow-black/5"
     }`}
   >
-    {/* title bar */}
+    {/* Browser title bar */}
     <div
       className={`flex items-center gap-3 px-4 py-3 ${
         variant === "dark" ? "bg-slate-800" : "bg-muted/80"
       }`}
     >
+      {/* Browser dots */}
       <div className="flex gap-1.5">
         <span className="h-3 w-3 rounded-full bg-red-400" />
         <span className="h-3 w-3 rounded-full bg-yellow-400" />
         <span className="h-3 w-3 rounded-full bg-green-400" />
       </div>
+
+      {/* Address bar */}
       <div
-        className={`flex-1 rounded-md px-3 py-1 text-xs truncate ${
+        className={`flex-1 truncate rounded-md px-3 py-1 text-xs ${
           variant === "dark"
             ? "bg-slate-700 text-slate-300"
             : "bg-background text-muted-foreground"
@@ -41,109 +67,133 @@ const BrowserFrame = ({
       </div>
     </div>
 
-    {/* body */}
+    {/* Website body */}
     <div className="relative">{children}</div>
   </div>
 );
 
-/* ── abstract website placeholder ─────────────────────── */
-const JBCPlaceholder = () => (
-  <div className="aspect-[16/10] bg-gradient-to-br from-sky-50 via-white to-emerald-50 p-6 flex flex-col gap-4">
-    {/* nav */}
-    <div className="flex items-center justify-between">
-      <div className="h-4 w-28 rounded bg-sky-200/70" />
-      <div className="flex gap-3">
-        <div className="h-3 w-14 rounded bg-slate-200" />
-        <div className="h-3 w-14 rounded bg-slate-200" />
-        <div className="h-3 w-14 rounded bg-slate-200" />
-      </div>
-    </div>
-    {/* hero */}
-    <div className="flex-1 flex flex-col items-center justify-center gap-3 text-center">
-      <div className="h-3 w-16 rounded bg-emerald-300/60" />
-      <div className="h-6 w-56 rounded bg-sky-300/50" />
-      <div className="h-6 w-44 rounded bg-sky-300/40" />
-      <div className="h-3 w-64 rounded bg-slate-200/80" />
-      <div className="mt-2 flex gap-3">
-        <div className="h-8 w-24 rounded-full bg-sky-400/60" />
-        <div className="h-8 w-24 rounded-full bg-emerald-400/50" />
-      </div>
-    </div>
-    {/* cards */}
-    <div className="flex gap-3">
-      {[1, 2, 3].map((i) => (
-        <div
-          key={i}
-          className="flex-1 rounded-lg bg-white/80 border border-sky-100 p-3 flex flex-col gap-2"
-        >
-          <div className="h-2 w-12 rounded bg-sky-200/70" />
-          <div className="h-2 w-full rounded bg-slate-200/60" />
-          <div className="h-2 w-3/4 rounded bg-slate-200/40" />
-        </div>
-      ))}
-    </div>
-  </div>
-);
+/* ─────────────────────────────────────────────────────────────
+   Configurable iframe preview
 
-const AFBPlaceholder = () => (
-  <div className="aspect-[16/10] bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-6 flex flex-col gap-4">
-    {/* nav */}
-    <div className="flex items-center justify-between">
-      <div className="flex items-center gap-2">
-        <div className="h-4 w-4 rounded bg-orange-400/70" />
-        <div className="h-3 w-20 rounded bg-white/20" />
-      </div>
-      <div className="flex gap-3">
-        <div className="h-3 w-12 rounded bg-white/10" />
-        <div className="h-3 w-12 rounded bg-white/10" />
-        <div className="h-6 w-16 rounded-full bg-white/15" />
-      </div>
-    </div>
-    {/* hero */}
-    <div className="flex-1 flex flex-col items-center justify-center gap-3 text-center">
-      <div className="h-7 w-52 rounded bg-white/15" />
-      <div className="h-7 w-40 rounded bg-white/10" />
-      <div className="h-3 w-72 rounded bg-white/5" />
-      <div className="mt-2 h-9 w-28 rounded-full bg-white/15" />
-    </div>
-    {/* stats bar */}
-    <div className="flex gap-4 justify-center">
-      {["12,400+", "99.98%", "38ms"].map((s) => (
-        <div key={s} className="flex flex-col items-center gap-1">
-          <div className="h-3 w-14 rounded bg-emerald-400/30" />
-          <div className="h-2 w-20 rounded bg-white/8" />
-        </div>
-      ))}
-    </div>
-    {/* cards */}
-    <div className="flex gap-3">
-      {[1, 2, 3, 4].map((i) => (
-        <div
-          key={i}
-          className="flex-1 rounded-lg bg-white/5 border border-white/10 p-3 flex flex-col gap-2"
-        >
-          <div className="h-2 w-8 rounded bg-orange-400/30" />
-          <div className="h-2 w-full rounded bg-white/8" />
-          <div className="h-2 w-3/4 rounded bg-white/5" />
-        </div>
-      ))}
-    </div>
-  </div>
-);
+   Each website can have its own scale.
 
-/* ── tag pill ─────────────────────────────────────────── */
+   scale = 1     → normal
+   scale = 0.75  → website rendered larger, then scaled down
+   scale = 0.5   → desktop website rendered at 2x viewport
+───────────────────────────────────────────────────────────── */
+
+const IframePreview = ({
+  src,
+  variant = "light",
+  scale = 1,
+}: {
+  src: string;
+  variant?: "light" | "dark";
+  scale?: number;
+}) => {
+  const safeScale = Math.max(0.25, Math.min(scale, 1));
+
+  return (
+    <div
+      className={`relative aspect-[16/10] w-full overflow-hidden ${
+        variant === "dark" ? "bg-slate-900" : "bg-white"
+      }`}
+    >
+      <iframe
+        src={src}
+        className="absolute left-0 top-0 border-0"
+        title={`Preview of ${src}`}
+        loading="lazy"
+        referrerPolicy="strict-origin-when-cross-origin"
+        style={{
+          width: `${100 / safeScale}%`,
+          height: `${100 / safeScale}%`,
+          transform: `scale(${safeScale})`,
+          transformOrigin: "top left",
+        }}
+      />
+    </div>
+  );
+};
+
+/* ─────────────────────────────────────────────────────────────
+   Tag pill
+───────────────────────────────────────────────────────────── */
+
 const Tag = ({ label }: { label: string }) => (
   <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
     {label}
   </span>
 );
 
-/* ── main section ─────────────────────────────────────── */
+/* ─────────────────────────────────────────────────────────────
+   Video player
+───────────────────────────────────────────────────────────── */
+
+const VideoPlayer = ({
+  src,
+  poster,
+}: {
+  src: string;
+  poster?: string;
+}) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const togglePlay = () => {
+    if (!videoRef.current) return;
+
+    if (isPlaying) {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
+  };
+
+  return (
+    <div className="group relative overflow-hidden rounded-2xl">
+      <video
+        ref={videoRef}
+        src={src}
+        poster={poster}
+        className="aspect-[4/3] w-full object-cover"
+        loop
+        muted
+        playsInline
+        onClick={togglePlay}
+      />
+
+      <div
+        className="absolute inset-0 flex cursor-pointer items-center justify-center bg-black/20 opacity-0 transition-opacity group-hover:opacity-100"
+        onClick={togglePlay}
+      >
+        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 shadow-lg">
+          {isPlaying ? (
+            <Pause className="ml-1 h-6 w-6 text-slate-700" />
+          ) : (
+            <Play className="ml-1 h-6 w-6 text-slate-700" />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* ─────────────────────────────────────────────────────────────
+   Main section
+───────────────────────────────────────────────────────────── */
+
 const FeaturedWork = () => {
   return (
     <section id="work" className="py-24">
       <div className="container mx-auto px-6">
-        {/* ── header ───────────────────────────────────── */}
+
+        {/* ─────────────────────────────────────────────────────
+            Header
+        ───────────────────────────────────────────────────── */}
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -153,15 +203,20 @@ const FeaturedWork = () => {
           <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-[0.2em] text-primary">
             Featured Work
           </span>
+
           <h2 className="font-heading text-4xl md:text-5xl">
             Real Products. Real Users.
           </h2>
+
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
             Shipped, live, and used every day — not just concepts in a pitch deck.
           </p>
         </motion.div>
 
-        {/* ── project 1 — mobile apps ──────────────────── */}
+        {/* ─────────────────────────────────────────────────────
+            PROJECT 1 — MOBILE APPS
+        ───────────────────────────────────────────────────── */}
+
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -169,36 +224,75 @@ const FeaturedWork = () => {
           transition={{ duration: 0.6 }}
           className="group mb-20 grid items-center gap-10 md:grid-cols-2 lg:gap-16"
         >
-          {/* image */}
+          {/* Carousel */}
           <div className="relative">
             <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-primary/5 via-transparent to-blue-500/5 blur-2xl" />
-            <div className="relative overflow-hidden rounded-2xl">
-              <img
-                src={appMockups}
-                alt="Mindset, Sailors, and HiringBull mobile apps"
-                className="w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-                loading="lazy"
-              />
+
+            <div className="relative">
+              <Carousel className="w-full" opts={{ loop: true }}>
+                <CarouselContent>
+
+                  <CarouselItem>
+                    <div className="p-1">
+                      <div className="overflow-hidden rounded-2xl">
+                        <img
+                          src={appMockups}
+                          alt="Mobile Apps Mockup"
+                          className="aspect-[4/3] w-full object-cover"
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
+                  </CarouselItem>
+
+                  <CarouselItem>
+                    <div className="p-1">
+                      <div className="overflow-hidden rounded-2xl">
+                        <img
+                          src={appPortfolioPreviews}
+                          alt="Mobile Apps Portfolio Preview"
+                          className="aspect-[4/3] w-full object-cover"
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
+                  </CarouselItem>
+
+                  <CarouselItem>
+                    <div className="p-1">
+                      <VideoPlayer
+                        src={mobileVideo}
+                        poster={appMockups}
+                      />
+                    </div>
+                  </CarouselItem>
+
+                </CarouselContent>
+
+                <CarouselPrevious className="left-2" />
+                <CarouselNext className="right-2" />
+              </Carousel>
             </div>
           </div>
 
-          {/* text */}
+          {/* Text */}
           <div className="flex flex-col gap-5">
             <div className="flex items-center gap-2 text-sm text-primary">
               <Smartphone size={16} />
+
               <span className="font-semibold uppercase tracking-wider">
                 Mobile Apps
               </span>
             </div>
 
-            <h3 className="font-heading text-3xl md:text-4xl leading-tight">
-              Mindset · Sailors · HiringBull
+            <h3 className="font-heading text-3xl leading-tight md:text-4xl">
+              Mindset · Sailors
             </h3>
 
-            <p className="text-muted-foreground leading-relaxed">
-              From concept to Play Store in 4 weeks. Three production apps built
-              with React Native, serving real users daily — meditation, maritime
-              networking, and job discovery.
+            <p className="leading-relaxed text-muted-foreground">
+              From concept to Play Store in 4 weeks. Two production apps built
+              with React Native, serving real users daily — meditation and
+              maritime networking.
             </p>
 
             <div className="flex flex-wrap gap-2">
@@ -207,8 +301,9 @@ const FeaturedWork = () => {
               <Tag label="iOS & Android" />
             </div>
 
-            <div className="flex items-center gap-2 rounded-lg bg-primary/5 px-4 py-3 w-fit">
+            <div className="flex w-fit items-center gap-2 rounded-lg bg-primary/5 px-4 py-3">
               <Sparkles size={16} className="text-primary" />
+
               <span className="text-sm font-semibold">
                 Our Apps Live on Play Store
               </span>
@@ -221,7 +316,9 @@ const FeaturedWork = () => {
               className="group/btn mt-1 flex w-fit items-center gap-2 rounded-full bg-gradient-warm px-6 py-3 text-sm font-semibold text-primary-foreground transition-shadow hover:shadow-warm"
             >
               <Download size={16} />
+
               Download Apps
+
               <ArrowRight
                 size={16}
                 className="transition-transform group-hover/btn:translate-x-1"
@@ -230,7 +327,10 @@ const FeaturedWork = () => {
           </div>
         </motion.div>
 
-        {/* ── project 2 — justbecause ──────────────────── */}
+        {/* ─────────────────────────────────────────────────────
+            PROJECT 2 — JUSTBECAUSE NETWORK
+        ───────────────────────────────────────────────────── */}
+
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -238,24 +338,25 @@ const FeaturedWork = () => {
           transition={{ duration: 0.6 }}
           className="group mb-20 grid items-center gap-10 md:grid-cols-2 lg:gap-16"
         >
-          {/* text — LEFT on desktop */}
+          {/* Text — LEFT */}
           <div className="flex flex-col gap-5 md:order-1">
             <div className="flex items-center gap-2 text-sm text-primary">
               <Globe size={16} />
+
               <span className="font-semibold uppercase tracking-wider">
                 Web Platform
               </span>
             </div>
 
-            <h3 className="font-heading text-3xl md:text-4xl leading-tight">
+            <h3 className="font-heading text-3xl leading-tight md:text-4xl">
               JustBeCause Network
             </h3>
 
-            <p className="text-lg text-muted-foreground/80 font-medium italic">
+            <p className="text-lg font-medium italic text-muted-foreground/80">
               AI-Powered NGO Job Platform
             </p>
 
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="leading-relaxed text-muted-foreground">
               A full-stack platform connecting NGOs worldwide with skilled
               professionals. Features an AI-powered search engine, job matching,
               verified profiles, and real-time collaboration tools.
@@ -267,20 +368,22 @@ const FeaturedWork = () => {
               <Tag label="PostgreSQL" />
             </div>
 
-            <div className="flex items-center gap-2 rounded-lg bg-primary/5 px-4 py-3 w-fit">
+            <div className="flex w-fit items-center gap-2 rounded-lg bg-primary/5 px-4 py-3">
               <Sparkles size={16} className="text-primary" />
+
               <span className="text-sm font-semibold">
                 Connecting Skills to Purpose — Globally
               </span>
             </div>
 
             <a
-              href="https://justbecausenetwork.com"
+              href="https://justbecausenetwork.com/en"
               target="_blank"
               rel="noopener noreferrer"
               className="group/btn mt-1 flex w-fit items-center gap-2 rounded-full border border-foreground/20 px-6 py-3 text-sm font-semibold text-foreground transition-all hover:border-primary hover:text-primary"
             >
               Visit Live Site
+
               <ExternalLink
                 size={16}
                 className="transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"
@@ -288,18 +391,29 @@ const FeaturedWork = () => {
             </a>
           </div>
 
-          {/* mockup — RIGHT on desktop */}
+          {/* Iframe — RIGHT */}
           <div className="relative md:order-2">
             <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-emerald-500/5 via-transparent to-sky-500/5 blur-2xl" />
+
             <div className="relative transition-transform duration-700 group-hover:scale-[1.01]">
-              <BrowserFrame url="justbecausenetwork.com" variant="light">
-                <JBCPlaceholder />
+              <BrowserFrame
+                url="justbecausenetwork.com/en"
+                variant="light"
+              >
+                <IframePreview
+                  src="https://justbecausenetwork.com/en"
+                  variant="light"
+                  scale={0.65}
+                />
               </BrowserFrame>
             </div>
           </div>
         </motion.div>
 
-        {/* ── project 3 — agents for business ──────────── */}
+        {/* ─────────────────────────────────────────────────────
+            PROJECT 3 — AGENTS FOR BUSINESS
+        ───────────────────────────────────────────────────── */}
+
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -307,40 +421,46 @@ const FeaturedWork = () => {
           transition={{ duration: 0.6 }}
           className="group mb-16 grid items-center gap-10 md:grid-cols-2 lg:gap-16"
         >
-          {/* mockup — LEFT */}
+          {/* Iframe — LEFT */}
           <div className="relative">
             <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-purple-500/5 via-transparent to-orange-500/5 blur-2xl" />
+
             <div className="relative transition-transform duration-700 group-hover:scale-[1.01]">
               <BrowserFrame
                 url="agentsforbusiness.lovable.app"
                 variant="dark"
               >
-                <AFBPlaceholder />
+                <IframePreview
+                  src="https://agentsforbusiness.lovable.app"
+                  variant="dark"
+                  scale={0.7}
+                />
               </BrowserFrame>
             </div>
           </div>
 
-          {/* text — RIGHT */}
+          {/* Text — RIGHT */}
           <div className="flex flex-col gap-5">
             <div className="flex items-center gap-2 text-sm text-primary">
               <Sparkles size={16} />
+
               <span className="font-semibold uppercase tracking-wider">
                 SaaS Platform
               </span>
             </div>
 
-            <h3 className="font-heading text-3xl md:text-4xl leading-tight">
+            <h3 className="font-heading text-3xl leading-tight md:text-4xl">
               Agents For Business
             </h3>
 
-            <p className="text-lg text-muted-foreground/80 font-medium italic">
+            <p className="text-lg font-medium italic text-muted-foreground/80">
               AI Agent Management Platform
             </p>
 
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="leading-relaxed text-muted-foreground">
               Enterprise-grade platform to design, deploy, and observe AI agents
-              across support, sales, and operations — from one calm, opinionated
-              control room.
+              across support, sales, and operations — from one calm,
+              opinionated control room.
             </p>
 
             <div className="flex flex-wrap gap-2">
@@ -349,8 +469,9 @@ const FeaturedWork = () => {
               <Tag label="React" />
             </div>
 
-            <div className="flex items-center gap-2 rounded-lg bg-primary/5 px-4 py-3 w-fit">
+            <div className="flex w-fit items-center gap-2 rounded-lg bg-primary/5 px-4 py-3">
               <Sparkles size={16} className="text-primary" />
+
               <span className="text-sm font-semibold">
                 200+ Tool Adapters · 99.98% Uptime
               </span>
@@ -363,6 +484,7 @@ const FeaturedWork = () => {
               className="group/btn mt-1 flex w-fit items-center gap-2 rounded-full border border-foreground/20 px-6 py-3 text-sm font-semibold text-foreground transition-all hover:border-primary hover:text-primary"
             >
               Visit Live Site
+
               <ExternalLink
                 size={16}
                 className="transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"
@@ -371,7 +493,93 @@ const FeaturedWork = () => {
           </div>
         </motion.div>
 
-        {/* ── see all work ─────────────────────────────── */}
+        {/* ─────────────────────────────────────────────────────
+            PROJECT 4 — HIRINGBULL
+        ───────────────────────────────────────────────────── */}
+
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="group mb-16 grid items-center gap-10 md:grid-cols-2 lg:gap-16"
+        >
+          {/* Text — LEFT */}
+          <div className="flex flex-col gap-5 md:order-1">
+            <div className="flex items-center gap-2 text-sm text-primary">
+              <Globe size={16} />
+
+              <span className="font-semibold uppercase tracking-wider">
+                Web Platform
+              </span>
+            </div>
+
+            <h3 className="font-heading text-3xl leading-tight md:text-4xl">
+              HiringBull
+            </h3>
+
+            <p className="text-lg font-medium italic text-muted-foreground/80">
+              Smart Job Discovery Platform
+            </p>
+
+            <p className="leading-relaxed text-muted-foreground">
+              A modern job discovery platform helping candidates find their
+              dream jobs with AI-powered recommendations, company insights,
+              and seamless application tracking.
+            </p>
+
+            <div className="flex flex-wrap gap-2">
+              <Tag label="Next.js" />
+              <Tag label="AI Matching" />
+              <Tag label="TypeScript" />
+            </div>
+
+            <div className="flex w-fit items-center gap-2 rounded-lg bg-primary/5 px-4 py-3">
+              <Sparkles size={16} className="text-primary" />
+
+              <span className="text-sm font-semibold">
+                Connecting Talent with Opportunity
+              </span>
+            </div>
+
+            <a
+              href="https://hiringbull.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/btn mt-1 flex w-fit items-center gap-2 rounded-full border border-foreground/20 px-6 py-3 text-sm font-semibold text-foreground transition-all hover:border-primary hover:text-primary"
+            >
+              Visit Live Site
+
+              <ExternalLink
+                size={16}
+                className="transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"
+              />
+            </a>
+          </div>
+
+          {/* Iframe — RIGHT */}
+          <div className="relative md:order-2">
+            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-amber-500/5 via-transparent to-orange-500/5 blur-2xl" />
+
+            <div className="relative transition-transform duration-700 group-hover:scale-[1.01]">
+              <BrowserFrame
+                url="hiringbull.org"
+                variant="light"
+              >
+                <IframePreview
+                  src="https://hiringbull.org"
+                  variant="light"
+                  scale={0.5}
+                />
+              </BrowserFrame>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* ─────────────────────────────────────────────────────
+            SEE ALL WORK
+        ───────────────────────────────────────────────────── */}
+
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -383,6 +591,7 @@ const FeaturedWork = () => {
             className="group/all inline-flex items-center gap-2 text-lg font-semibold text-foreground transition-colors hover:text-primary"
           >
             See All Work
+
             <ArrowRight
               size={20}
               className="transition-transform group-hover/all:translate-x-2"
