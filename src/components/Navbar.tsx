@@ -21,7 +21,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         <a href="/" className="font-heading text-2xl tracking-tight text-foreground">
-          APP<span className="text-primary">ERS</span>
+          PUNJAB<span className="text-primary">TECH</span>
         </a>
 
         <div className="hidden items-center gap-8 md:flex">
