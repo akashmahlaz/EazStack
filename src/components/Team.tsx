@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin, Twitter } from "lucide-react";
 
 import teamCeo from "@/assets/team-ceo.png";
 import teamDesigner from "@/assets/sahil.png";
@@ -7,9 +7,34 @@ import teamDev from "@/assets/satinder.png";
 import teamMarketing from "@/assets/vickeramjit-singh.png";
 import teamConsultant from "@/assets/arshdeep.png";
 
-const members = [
-  { name: "Akash Mahla", role: "Founder & CEO", img: teamCeo, desc: "Exceptional Software Engineering, Product Engineering & 5 years Startup ecosystem experience." },
-  { name: "Sahil Dutt", role: "Lead Designer & frontend developer", img: teamDesigner, desc: "Crafts pixel-perfect brands and digital experiences." },
+interface TeamMember {
+  name: string;
+  role: string;
+  img: string;
+  desc: string;
+  linkedin?: string;
+  twitter?: string;
+  github?: string;
+}
+
+const members: TeamMember[] = [
+  { 
+    name: "Akash Mahla", 
+    role: "Founder & CEO", 
+    img: teamCeo, 
+    desc: "Exceptional Software Engineering, Product Engineering & 5 years Startup ecosystem experience.",
+    linkedin: "https://linkedin.com/in/akashmahlax",
+    twitter: "https://x.com/akashmahlax",
+    github: "https://github.com/akashmahlaz?tab=repositories"
+  },
+  { 
+    name: "Sahil Dutt", 
+    role: "Lead Designer & frontend developer", 
+    img: teamDesigner, 
+    desc: "Crafts pixel-perfect brands and digital experiences.",
+    linkedin: "https://www.linkedin.com/in/sahildutt/",
+    github: "https://sahilduttpb06.github.io/sahilportfolio"
+  },
   { name: "Satinder Singh", role: "iOS & Android Developer", img: teamDev, desc: "Full-stack architect building scalable products." },
   { name: "Vickeramjit Singh", role: "Business Analyst & AI Product Engineer", img: teamMarketing, desc: "Growth strategist who scales brands from zero." },
   { name: "Arshdeep Singh", role: "Business Consultant", img: teamConsultant, desc: "Guides startups through funding and strategy." },
@@ -59,12 +84,21 @@ const Team = () => {
                 <p className="mt-1 text-sm font-medium text-primary">{member.role}</p>
                 <p className="mt-3 text-sm text-muted-foreground">{member.desc}</p>
                 <div className="mt-4 flex gap-3">
-                  <a href="#" className="text-muted-foreground transition-colors hover:text-primary">
-                    <Linkedin size={18} />
-                  </a>
-                  <a href="#" className="text-muted-foreground transition-colors hover:text-primary">
-                    <Twitter size={18} />
-                  </a>
+                  {member.linkedin && (
+                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-primary">
+                      <Linkedin size={18} />
+                    </a>
+                  )}
+                  {member.twitter && (
+                    <a href={member.twitter} target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-primary">
+                      <Twitter size={18} />
+                    </a>
+                  )}
+                  {member.github && (
+                    <a href={member.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-primary">
+                      <Github size={18} />
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
