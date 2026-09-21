@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Linkedin, Twitter, Mail, ArrowRight } from "lucide-react";
+import { Github, Linkedin, Twitter, ArrowRight } from "lucide-react";
 
 import teamCeo from "@/assets/team-ceo.png";
 import teamDesigner from "@/assets/sahil.png";
@@ -11,15 +11,27 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Seo from "@/components/Seo";
 
-const team = [
+interface TeamMember {
+  name: string;
+  role: string;
+  img: string;
+  desc: string;
+  skills: string[];
+  linkedin?: string;
+  twitter?: string;
+  github?: string;
+}
+
+const team: TeamMember[] = [
   {
     name: "Akash Mahla",
     role: "Founder & CEO",
     img: teamCeo,
     desc: "Visionary leader with 10+ years in startup ecosystems. Passionate about helping entrepreneurs turn ideas into successful businesses.",
     skills: ["Strategy", "Leadership", "Business Development"],
-    linkedin: "#",
-    twitter: "#"
+    linkedin: "https://linkedin.com/in/akashmahlax",
+    twitter: "https://x.com/akashmahlax",
+    github: "https://github.com/akashmahlaz?tab=repositories"
   },
   {
     name: "Sahil Dutt",
@@ -27,35 +39,29 @@ const team = [
     img: teamDesigner,
     desc: "Crafts pixel-perfect brands and digital experiences. Award-winning designer with a passion for creating memorable user journeys.",
     skills: ["UI/UX Design", "Brand Identity", "Figma"],
-    linkedin: "https://www.linkedin.com/in/sahildutt/?skipRedirect=true",
-    twitter: "https://sahilduttpb06.github.io/sahilportfolio/"
+    linkedin: "https://www.linkedin.com/in/sahildutt/",
+    github: "https://sahilduttpb06.github.io/sahilportfolio"
   },
   {
     name: "Satinder Singh",
     role: "Head of Engineering & iOS Developer",
     img: teamDev,
     desc: "Full-stack architect building scalable products. Expert in React Native, Node.js, and cloud infrastructure.",
-    skills: ["React Native", "Node.js", "AWS"],
-    linkedin: "#",
-    twitter: "#"
+    skills: ["React Native", "Node.js", "AWS"]
   },
   {
     name: "Vickeramjit Singh",
     role: "Business Analyst & Strategist",
     img: teamMarketing,
     desc: "Growth strategist who scales brands from zero. Data-driven marketer with expertise in digital campaigns.",
-    skills: ["Growth Marketing", "SEO", "PPC"],
-    linkedin: "#",
-    twitter: "#"
+    skills: ["Growth Marketing", "SEO", "PPC"]
   },
   {
     name: "Arshdeep Singh",
     role: "Business Consultant & Finance",
     img: teamConsultant,
     desc: "Guides startups through funding and strategy. Former VC with deep expertise in fundraising and business planning.",
-    skills: ["Fundraising", "Business Strategy", "Finance"],
-    linkedin: "#",
-    twitter: "#"
+    skills: ["Fundraising", "Business Strategy", "Finance"]
   },
 ];
 
@@ -133,15 +139,21 @@ const TeamPage = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
                     <div className="flex gap-3">
-                      <a href={member.linkedin} className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-primary hover:bg-primary hover:text-primary-foreground transition-all">
-                        <Linkedin size={18} />
-                      </a>
-                      <a href={member.twitter} className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-primary hover:bg-primary hover:text-primary-foreground transition-all">
-                        <Twitter size={18} />
-                      </a>
-                      <a href="mailto:akashdalla406@gmail.com" className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-primary hover:bg-primary hover:text-primary-foreground transition-all">
-                        <Mail size={18} />
-                      </a>
+                      {member.linkedin && (
+                        <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-primary hover:bg-primary hover:text-primary-foreground transition-all">
+                          <Linkedin size={18} />
+                        </a>
+                      )}
+                      {member.twitter && (
+                        <a href={member.twitter} target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-primary hover:bg-primary hover:text-primary-foreground transition-all">
+                          <Twitter size={18} />
+                        </a>
+                      )}
+                      {member.github && (
+                        <a href={member.github} target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-primary hover:bg-primary hover:text-primary-foreground transition-all">
+                          <Github size={18} />
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
