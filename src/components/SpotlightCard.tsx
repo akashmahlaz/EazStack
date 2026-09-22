@@ -5,13 +5,14 @@ import {
   useReducedMotion,
   type HTMLMotionProps,
 } from "framer-motion";
+import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
 type SpotlightCardProps = Omit<HTMLMotionProps<"article">, "children"> & {
   href: string;
   label: string;
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 const SpotlightCard = ({
