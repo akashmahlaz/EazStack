@@ -1,26 +1,91 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-heading: "DM Serif Display", Georgia, serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+
+  --color-background: hsl(40 33% 97%);
+  --color-foreground: hsl(20 20% 10%);
+  --color-card: hsl(40 30% 95%);
+  --color-card-foreground: hsl(20 20% 10%);
+  --color-popover: hsl(40 33% 97%);
+  --color-popover-foreground: hsl(20 20% 10%);
+  --color-primary: hsl(12 76% 58%);
+  --color-primary-foreground: hsl(40 33% 97%);
+  --color-secondary: hsl(35 30% 91%);
+  --color-secondary-foreground: hsl(20 20% 15%);
+  --color-muted: hsl(35 20% 92%);
+  --color-muted-foreground: hsl(20 10% 45%);
+  --color-accent: hsl(12 76% 58%);
+  --color-accent-foreground: hsl(40 33% 97%);
+  --color-destructive: hsl(0 84% 60%);
+  --color-destructive-foreground: hsl(40 33% 97%);
+  --color-border: hsl(30 15% 88%);
+  --color-input: hsl(30 15% 88%);
+  --color-ring: hsl(12 76% 58%);
+  --color-spotlight: hsl(35 92% 58%);
+
+  --radius-lg: 0.75rem;
+  --radius-md: 0.625rem;
+  --radius-sm: 0.5rem;
+
+  --gradient-warm: linear-gradient(135deg, hsl(12, 76%, 58%), hsl(30, 90%, 60%));
+  --gradient-hero: linear-gradient(180deg, hsl(40, 33%, 97%) 0%, hsl(35, 30%, 93%) 100%);
+  --shadow-warm: 0 8px 30px hsl(12 76% 58% / 0.12);
+  --shadow-soft: 0 4px 20px hsl(20 20% 10% / 0.06);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  max-width: 1400px;
+}
+
+@utility font-heading {
+  font-family: var(--font-heading);
+}
+
+@utility font-body {
+  font-family: var(--font-body);
+}
+
+@utility text-gradient {
+  background: var(--gradient-warm);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@utility bg-gradient-warm {
+  background: var(--gradient-warm);
+}
+
+@utility bg-gradient-hero {
+  background: var(--gradient-hero);
+}
+
+@utility shadow-warm {
+  box-shadow: var(--shadow-warm);
+}
+
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
 }
