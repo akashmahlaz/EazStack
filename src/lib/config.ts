@@ -84,3 +84,53 @@ export const TEAM_PROFILES: Record<
     linkedin: "https://linkedin.com/in/arshdeepsingh",
   },
 };
+
+/**
+ * Public-facing company name used across the Navbar, Footer, and legal copy.
+ */
+export const COMPANY_NAME = "Punjab Tech";
+
+/**
+ * Footer navigation columns.
+ * - Services: core service offering links
+ * - Company: site navigation links
+ */
+export const FOOTER_NAV = {
+  services: {
+    label: "Services",
+    links: [
+      { label: "Mobile App Development", href: "/app-development" },
+      { label: "Web Development", href: "/web-development" },
+      { label: "Digital Marketing", href: "/digital-marketing" },
+      { label: "Branding & Design", href: "/branding-design" },
+      { label: "Social Media Growth", href: "/social-media-growth" },
+      { label: "App Store Publishing", href: "/app-store-publishing" },
+      { label: "CRM Integration", href: "/crm-integration" },
+      { label: "Payment Integration", href: "/payment-integration" },
+      { label: "Business Strategy", href: "/business-strategy" },
+      { label: "Funding Guidance", href: "/funding-guidance" },
+      { label: "Hiring Support", href: "/hiring-support" },
+      { label: "Ongoing Support", href: "/ongoing-support" },
+    ],
+  },
+  company: {
+    label: "Company",
+    links: [
+      { label: "Home", href: "/" },
+      { label: "Services", href: "/services" },
+      { label: "Team", href: "/team" },
+      { label: "Process", href: "/process" },
+      { label: "Contact", href: "/contact" },
+    ],
+  },
+} as const;
+
+/**
+ * Legal document links rendered in the footer.
+ */
+export const LEGAL_LINKS = [
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms & Conditions", href: "/terms" },
+  { label: "Cookies", href: "/cookies" },
+  { label: "Accessibility", href: "/accessibility" },
+] as const;
