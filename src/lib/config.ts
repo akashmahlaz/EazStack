@@ -17,7 +17,7 @@ export const SITE_URL = "https://punabtech.online";
  * Replace with your Calendly, Savvycal, or Google Calendar booking page URL.
  */
 export const BOOKING_URL =
-  "https://calendly.com/punjabtech/30min";
+  "https://calendly.com/akashdalla406/discovery-call-punjab-tech";
 
 /**
  * WhatsApp link (used as a secondary contact channel).
