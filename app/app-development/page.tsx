@@ -2,9 +2,9 @@
 
 import { motion } from "framer-motion";
 import {
-  ArrowRight, CheckCircle2, Star, Zap, Shield, Clock, Globe,
-  Smartphone, Code2, Rocket, Users, TrendingUp, MessageCircle,
-  Play, Monitor, BarChart3, RefreshCw, Headphones, Download
+  ArrowRight, CheckCircle2, Star, Zap, Shield, Globe,
+  Code2, TrendingUp, MessageCircle,
+  Monitor,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
