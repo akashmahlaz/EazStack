@@ -100,17 +100,12 @@ export const FOOTER_NAV = {
     label: "Services",
     links: [
       { label: "Mobile App Development", href: "/app-development" },
+      { label: "Legal & Compliance", href: "/legal" },
       { label: "Web Development", href: "/web-development" },
-      { label: "Digital Marketing", href: "/digital-marketing" },
-      { label: "Branding & Design", href: "/branding-design" },
-      { label: "Social Media Growth", href: "/social-media-growth" },
-      { label: "App Store Publishing", href: "/app-store-publishing" },
-      { label: "CRM Integration", href: "/crm-integration" },
-      { label: "Payment Integration", href: "/payment-integration" },
       { label: "Business Strategy", href: "/business-strategy" },
       { label: "Funding Guidance", href: "/funding-guidance" },
       { label: "Hiring Support", href: "/hiring-support" },
-      { label: "Ongoing Support", href: "/ongoing-support" },
+
     ],
   },
   company: {
