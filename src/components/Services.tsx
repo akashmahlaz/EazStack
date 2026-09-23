@@ -7,6 +7,7 @@ import {
   CircleCheck,
   CreditCard,
   Database,
+  Globe2,
   GitBranch,
   Headphones,
   Megaphone,
@@ -14,6 +15,7 @@ import {
   Scale,
   Smartphone,
   Sparkles,
+  ShieldCheck,
   Users,
   WalletCards,
 } from "lucide-react";
@@ -32,15 +34,18 @@ const Chip = ({ children, inverted = false }: { children: React.ReactNode; inver
 );
 
 const MobilePreview = () => (
-  <div className="relative mx-auto flex h-52 w-32 flex-col overflow-hidden rounded-[1.5rem] border-4 border-foreground bg-background p-2 shadow-soft sm:h-56 sm:w-36">
-    <div className="mx-auto mb-2 h-1.5 w-10 rounded-full bg-foreground/20" />
-    <div className="flex items-center justify-between text-[8px] font-semibold text-muted-foreground">
+  <div className="relative mx-auto flex h-72 w-44 flex-col overflow-hidden rounded-[1.75rem] border-[5px] border-foreground bg-background p-3 shadow-soft sm:h-80 sm:w-48">
+    <div className="mx-auto mb-3 h-1.5 w-12 rounded-full bg-foreground/20" />
+    <div className="flex items-center justify-between text-[9px] font-semibold text-muted-foreground">
       <span>9:41</span>
-      <span className="flex items-center gap-1 text-primary"><Radio size={8} /> LIVE</span>
+      <span className="flex items-center gap-1 text-primary"><Radio size={9} /> LIVE</span>
     </div>
-    <div className="mt-3 rounded-md bg-secondary p-2">
-      <span className="text-[8px] font-medium text-muted-foreground">Weekly activity</span>
-      <div className="mt-2 flex h-12 items-end gap-1">
+    <div className="mt-4 rounded-md bg-secondary p-3">
+      <div className="flex items-center justify-between">
+        <span className="text-[9px] font-medium text-muted-foreground">Weekly activity</span>
+        <span className="text-[9px] font-semibold text-primary">+18%</span>
+      </div>
+      <div className="mt-3 flex h-16 items-end gap-1.5">
         {[35, 56, 42, 76, 62, 88, 68].map((height, index) => (
           <motion.span
             key={height + index}
@@ -53,50 +58,47 @@ const MobilePreview = () => (
         ))}
       </div>
     </div>
-    <div className="mt-2 grid grid-cols-2 gap-1.5">
-      <div className="rounded-md border border-border bg-card p-2">
-        <p className="text-[8px] text-muted-foreground">Frame rate</p>
-        <p className="mt-1 text-sm font-semibold text-foreground">60 <span className="text-[8px] font-normal">FPS</span></p>
+    <div className="mt-2 grid grid-cols-2 gap-2">
+      <div className="rounded-md border border-border bg-card p-2.5">
+        <p className="text-[9px] text-muted-foreground">Frame rate</p>
+        <p className="mt-1 text-base font-semibold text-foreground">60 <span className="text-[9px] font-normal">FPS</span></p>
       </div>
-      <div className="rounded-md border border-border bg-card p-2">
-        <p className="text-[8px] text-muted-foreground">Build</p>
-        <p className="mt-1 text-sm font-semibold text-foreground">1.4.2</p>
+      <div className="rounded-md border border-border bg-card p-2.5">
+        <p className="text-[9px] text-muted-foreground">Build</p>
+        <p className="mt-1 text-base font-semibold text-foreground">1.4.2</p>
       </div>
     </div>
-    <div className="mt-auto flex items-center gap-1 rounded-md bg-primary/10 p-1.5 text-[8px] font-semibold text-primary">
-      <CircleCheck size={11} /> App Store approved
+    <div className="mt-auto flex items-center gap-1.5 rounded-md bg-primary/10 p-2 text-[9px] font-semibold text-primary">
+      <CircleCheck size={13} /> App Store approved
     </div>
   </div>
 );
 
 const WebPreview = () => (
-  <div className="flex h-52 flex-col overflow-hidden rounded-lg border border-foreground/15 bg-foreground p-4 font-mono text-background sm:h-56">
-    <div className="flex items-center justify-between border-b border-background/15 pb-3 text-[10px] text-background/60">
-      <span className="flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-primary" /> EDGE NETWORK</span>
-      <span>prod / global</span>
-    </div>
-    <div className="grid flex-1 grid-cols-[1fr_auto] gap-4 pt-4">
-      <div className="space-y-2 text-[10px] text-background/70">
-        <p><span className="text-primary">$</span> deploy --region global</p>
-        <p><span className="text-primary">✓</span> functions compiled</p>
-        <p><span className="text-primary">✓</span> edge cache warmed</p>
-        <p><span className="text-primary">✓</span> health checks passing</p>
-        <motion.p
-          className="flex items-center gap-2 pt-2 text-background"
-          animate={{ opacity: [0.45, 1, 0.45] }}
-          transition={{ repeat: Infinity, duration: 1.8 }}
-        >
-          <span className="h-1.5 w-1.5 rounded-full bg-primary" /> listening for traffic
-        </motion.p>
+  <div className="flex h-72 flex-col overflow-hidden rounded-lg border border-border bg-background shadow-soft sm:h-80">
+    <div className="flex h-11 items-center gap-3 border-b border-border bg-secondary/60 px-4">
+      <div className="flex gap-1.5" aria-hidden="true"><span className="h-2 w-2 rounded-full bg-primary/70" /><span className="h-2 w-2 rounded-full bg-primary/40" /><span className="h-2 w-2 rounded-full bg-primary/20" /></div>
+      <div className="flex min-w-0 flex-1 items-center gap-2 rounded-md border border-border bg-card px-3 py-1.5 text-[9px] text-muted-foreground">
+        <ShieldCheck size={11} className="text-primary" /> app.production.com
       </div>
-      <div className="flex flex-col gap-2">
-        <div className="min-w-24 rounded-md border border-background/15 bg-background/5 p-3">
-          <p className="text-[9px] text-background/55">EDGE LATENCY</p>
-          <p className="mt-1 text-2xl font-semibold text-background">12<span className="text-xs text-primary">ms</span></p>
+    </div>
+    <div className="grid flex-1 grid-cols-[3rem_1fr] sm:grid-cols-[4rem_1fr]">
+      <div className="flex flex-col items-center gap-4 border-r border-border bg-secondary/35 py-4 text-muted-foreground">
+        <Globe2 size={17} className="text-primary" /><BarChart3 size={17} /><Database size={17} /><GitBranch size={17} />
+      </div>
+      <div className="min-w-0 p-4 sm:p-5">
+        <div className="flex items-center justify-between">
+          <div><p className="text-[9px] font-semibold uppercase text-muted-foreground">Global performance</p><p className="mt-1 font-heading text-lg">Production overview</p></div>
+          <span className="flex items-center gap-1.5 rounded-full bg-primary/10 px-2 py-1 text-[9px] font-semibold text-primary"><span className="h-1.5 w-1.5 rounded-full bg-primary" /> Healthy</span>
         </div>
-        <div className="min-w-24 rounded-md border border-background/15 bg-background/5 p-3">
-          <p className="text-[9px] text-background/55">SLA</p>
-          <p className="mt-1 text-xl font-semibold text-background">99.99%</p>
+        <div className="mt-4 grid grid-cols-2 gap-2">
+          <div className="rounded-md border border-border bg-card p-3"><p className="text-[9px] text-muted-foreground">EDGE LATENCY</p><p className="mt-1 text-xl font-semibold">12<span className="text-[10px] text-primary">ms</span></p></div>
+          <div className="rounded-md border border-border bg-card p-3"><p className="text-[9px] text-muted-foreground">UPTIME SLA</p><p className="mt-1 text-xl font-semibold">99.99%</p></div>
+        </div>
+        <div className="mt-3 flex h-20 items-end gap-1 rounded-md border border-border bg-secondary/30 px-3 pb-3 pt-4">
+          {[32, 46, 38, 61, 52, 78, 59, 88, 67, 92, 75, 96].map((height, index) => (
+            <motion.span key={index} className="flex-1 rounded-sm bg-primary/60" initial={{ height: "18%" }} whileInView={{ height: `${height}%` }} viewport={{ once: true }} transition={{ duration: .45, delay: index * .035 }} />
+          ))}
         </div>
       </div>
     </div>
@@ -177,7 +179,7 @@ const Services = () => (
       </motion.header>
 
       <div className="grid auto-rows-fr gap-4 lg:grid-cols-12">
-        <SpotlightCard href="/app-development" label="Explore Mobile App Development" className="min-h-[470px] p-6 sm:p-8 lg:col-span-5">
+        <SpotlightCard href="/app-development" label="Explore Mobile App Development" className="min-h-[560px] p-6 sm:p-8 lg:col-span-5">
           <div className="flex h-full flex-col">
             <div className="flex items-start justify-between gap-4">
               <div>
@@ -192,7 +194,7 @@ const Services = () => (
           </div>
         </SpotlightCard>
 
-        <SpotlightCard href="/web-development" label="Explore Full-Stack Web Applications" className="min-h-[470px] p-6 sm:p-8 lg:col-span-7">
+        <SpotlightCard href="/web-development" label="Explore Full-Stack Web Applications" className="min-h-[560px] p-6 sm:p-8 lg:col-span-7">
           <div className="flex h-full flex-col">
             <div className="flex items-start justify-between gap-4">
               <div>
