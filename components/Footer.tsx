@@ -4,15 +4,52 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform, useSpring, useMotionValue, useMotionTemplate } from "framer-motion";
 import { MessageCircle, ArrowUpRight, Sparkles, MoveRight } from "lucide-react";
 import { Input } from "./ui/input";
-import {
-  COMPANY_NAME,
-  EMAIL,
-  FOOTER_NAV,
-  LEGAL_LINKS,
-  PHONE,
-  SOCIAL_LINKS,
-  BOOKING_URL,
-} from "@/lib/config";
+
+const COMPANY_NAME = "Punjab Tech";
+
+const EMAIL = "akashdalla406@gmail.com";
+
+const BOOKING_URL =
+  "https://calendly.com/akashdalla406/discovery-call-punjab-tech";
+
+const SOCIAL_LINKS = {
+  linkedin: "https://linkedin.com/company/punjabtech",
+  github: "https://github.com/akashmahlaz",
+  twitter: "https://twitter.com/punjabtech",
+  whatsapp:
+    "https://wa.me/917814002784?text=Hi%20Akash%2C%20I%27d%20like%20to%20discuss%20a%20project",
+} as const;
+
+const FOOTER_NAV = {
+  services: {
+    label: "Services",
+    links: [
+      { label: "Mobile App Development", href: "/app-development" },
+      { label: "Legal & Compliance", href: "/legal" },
+      { label: "Web Development", href: "/web-development" },
+      { label: "Business Strategy", href: "/business-strategy" },
+      { label: "Funding Guidance", href: "/funding-guidance" },
+      { label: "Hiring Support", href: "/hiring-support" },
+    ],
+  },
+  company: {
+    label: "Company",
+    links: [
+      { label: "Home", href: "/" },
+      { label: "Services", href: "/services" },
+      { label: "Team", href: "/team" },
+      { label: "Process", href: "/process" },
+      { label: "Contact", href: "/contact" },
+    ],
+  },
+} as const;
+
+const LEGAL_LINKS = [
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms & Conditions", href: "/terms" },
+  { label: "Cookies", href: "/cookies" },
+  { label: "Accessibility", href: "/accessibility" },
+] as const;
 
 // --- Inline brand icons ---
 // (lucide-react@1.47 no longer exports Twitter/Linkedin/Github)

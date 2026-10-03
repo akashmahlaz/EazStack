@@ -202,11 +202,11 @@ const FeaturedWork = () => {
           </span>
 
           <h2 className="font-heading text-4xl md:text-5xl">
-            Real Products. Real Users.
+            Startups We've Built & Scaled
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Shipped, live, and used every day — not just concepts in a pitch deck.
+            Built, Scaled, and helped founders to get funding to scale their products.
           </p>
         </motion.div>
 

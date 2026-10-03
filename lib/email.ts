@@ -14,7 +14,7 @@ export async function sendVerificationEmail({
   const { data, error } = await resend.emails.send({
     from: process.env.FROM_EMAIL!,
     to,
-    subject: "Verify your email address",
+    subject: "Punjab Tech - Verify your email address",
     html: `
       <h2>Verify your email</h2>
       <p>Hi ${name},</p>
